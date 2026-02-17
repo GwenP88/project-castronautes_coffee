@@ -129,21 +129,24 @@
 
                 <div class="contact-grid">
                 <!-- Formulaire (2/3) -->
-                    <div class="contact__formWrap">
-                        <form class="contact-form" action="#" method="post">
+                    <div class="container-form">
+                        <form class="contact-form" action="#" method="post" novalidate>
                             <div class="form-field">
                                 <label for="contact-name">Nom <span aria-hidden="true">(ou nom de code)</span></label>
-                                <input type="text" id="contact-name" name="name" required/>
+                                <input type="text" id="contact-name" name="name" required aria-describedby="error-name"/>
+                                <p class="form__error" id="error-name" aria-live="polite">Erreur d’identification : vous êtes officiellement personne.</p>
                             </div>
 
                             <div class="form-field">
                                 <label for="contact-email">Email <span aria-hidden="true">(ou canal de transmission)</span></label>
-                                <input type="email" id="contact-email" name="email" required/>
+                                <input type="email" id="contact-email" name="email" required aria-describedby="error-email"/>
+                                <p class="form__error" id="error-email" aria-live="polite">Transmission impossible : fréquence incorrecte.</p>
                             </div>
 
                             <div class="form-field">
                                 <label for="contact-message">Message <span aria-hidden="true">(en langage humain ou en castor)</span></label>
-                                <textarea type="text" id="contact-message" name="message" rows="6" required></textarea>
+                                <textarea type="text" id="contact-message" name="message" rows="6" required aria-describedby="error-message"></textarea>
+                                <p class="form__error" id="error-message" aria-live="polite">Tu ne peux pas envoyer du vide. Même dans l’espace.</p>
                             </div>
 
                             <div class="form-check">

@@ -1,0 +1,204 @@
+/* =========================
+   css/nav.css
+   NAVBAR (simple + responsive + burger)
+   ========================= */
+
+/* Header collé en haut */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--structure);
+}
+
+/* Container nav */
+.container-nav{
+    position: relative;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding-right: 32px;  
+}
+
+/* Logo */
+.nav-logo{
+    position: absolute;
+    left: 24px;
+    top: 6px;
+    width: 84px;
+    height: 84px;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+}
+
+/* Cercle */
+.nav-logo::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.82);
+    box-shadow: 0 10px 22px rgba(0,0,0,.25);
+    z-index: 0;
+}
+
+/* Image logo */
+.nav-logo img{
+    position: relative;
+    z-index: 1;
+    width: 84%;
+    height: auto;
+    display: block;
+}
+
+.nav-menu{
+    margin-left: auto;
+    padding-left: 120px;
+}
+
+/* Liens desktop */
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* --- Liens navbar : glow + underline animé --- */
+.nav-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  padding: 10px 8px;
+  border-radius: 0;
+  background: transparent;
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+/* trait (caché au départ) */
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px; 
+  height: 2px;
+  width: 100%;
+  background: var(--accent2); 
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms ease;
+}
+
+/* hover */
+.nav-link:hover{
+  color: rgba(255,255,255,.96);
+  text-shadow:
+    0 0 8px color-mix(in srgb, var(--accent2) 70%, transparent),
+    0 0 18px color-mix(in srgb, var(--accent2) 40%, transparent);
+}
+
+.nav-link:hover::after{
+  transform: scaleX(1);
+}
+
+.nav-link.is-active{
+  color: rgba(255,255,255,.96);
+}
+.nav-link.is-active::after{
+  transform: scaleX(1);
+}
+
+
+
+
+
+
+/* Bouton burger : caché en desktop */
+.nav-toggle{
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    cursor: pointer;
+}
+
+/* Les 3 barres du burger */
+.nav-burger{
+    width: 18px;
+    height: 2px;
+    background: rgba(255,255,255,.92);
+    display: inline-block;
+    position: relative;
+    border-radius: 999px;
+}
+
+.nav-burger::before,
+.nav-burger::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: rgba(255,255,255,.92);
+    border-radius: 999px;
+}
+
+.nav-burger::before{ top: -6px; }
+.nav-burger::after{ top: 6px; }
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 900px){
+
+  /* On affiche le burger */
+.nav-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  /* Menu caché par défaut */
+.nav-menu{
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+    background: var(--structure);
+    border-top: 1px solid rgba(255,255,255,.14);
+}
+
+
+.nav-menu.is-open{
+    display: block;
+}
+
+.nav-menu ul{
+    flex-direction: column;
+    gap: 6px;
+
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+}
+
+  .nav-link{
+    display: block;
+    text-align: center;
+    padding: 12px 12px;
+  }
+}

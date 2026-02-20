@@ -34,7 +34,7 @@
                 </button>
 
                 <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+                <div class="nav-menu" id="nav-menu">
                     <ul>
                         <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
@@ -81,9 +81,6 @@
                             </p>
                         </div>
                     </div>
-
-
-
 
                     <!-- Card 2 -->
                     <div class="card">
@@ -153,21 +150,21 @@
                     <div class="container-form">
                         <form class="contact-form" action="#" method="post" novalidate>
                             <div class="form-field">
-                                <label for="contact-name">Nom <span aria-hidden="true">(ou nom de code)</span></label>
+                                <label for="contact-name">Nom <span>(ou nom de code)</span></label>
                                 <input type="text" id="contact-name" name="name" required aria-describedby="error-name"/>
-                                <p class="form__error" id="error-name" aria-live="polite">Erreur d’identification : vous êtes officiellement personne.</p>
+                                <p class="form-error" id="error-name" aria-live="polite">Erreur d’identification : vous êtes officiellement personne.</p>
                             </div>
 
                             <div class="form-field">
-                                <label for="contact-email">Email <span aria-hidden="true">(ou canal de transmission)</span></label>
+                                <label for="contact-email">Email <span>(ou canal de transmission)</span></label>
                                 <input type="email" id="contact-email" name="email" required aria-describedby="error-email"/>
-                                <p class="form__error" id="error-email" aria-live="polite">Transmission impossible : fréquence incorrecte.</p>
+                                <p class="form-error" id="error-email" aria-live="polite">Transmission impossible : fréquence incorrecte.</p>
                             </div>
 
                             <div class="form-field">
-                                <label for="contact-message">Message <span aria-hidden="true">(en langage humain ou en castor)</span></label>
+                                <label for="contact-message">Message <span>(en langage humain ou en castor)</span></label>
                                 <textarea type="text" id="contact-message" name="message" rows="6" required aria-describedby="error-message"></textarea>
-                                <p class="form__error" id="error-message" aria-live="polite">Tu ne peux pas envoyer du vide. Même dans l’espace.</p>
+                                <p class="form-error" id="error-message" aria-live="polite">Tu ne peux pas envoyer du vide. Même dans l’espace.</p>
                             </div>
 
                             <div class="form-check">
@@ -176,13 +173,17 @@
                                 <label for="contact-consent">J’accepte les conséquences potentielles.</label>
                             </div>
 
-                            <button class="form__submit" type="submit">Envoyer (à mes risques et périls)</button>
+                            <button class="form-submit" type="submit">Envoyer (à mes risques et périls)</button>
+                            <div class="form-note">
+                                <p class="form-note-title">Délais de réponse</p>
+                                <p class="form-note-text">Inconnu : les castors font de leur mieux.</p>
+                            </div>
                         </form>
                     </div>
 
                     <!-- Image (1/3) -->
                     <aside class="contact-media" aria-label="Illustration de contact">
-                        <img class="contact__img" src="assets/other/send.png" alt="" height="200"/>
+                        <img class="contact-img" src="assets/other/send.png" alt="" height="200"/>
                     </aside>
                 </div>
             </section>
@@ -191,7 +192,7 @@
         <footer>
             <div class="container-col-footer col">
                 <!-- Colonne 1 -->
-                <section class="footer-col" aria-label="Castronaute Coffee and more">
+                <section class="footer-col">
                     <h3 class="footer-title">Castronaute Coffee… and more</h3>
                     <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
                 </section>
@@ -208,7 +209,7 @@
                 </nav>
                 
                 <!-- Colonne 3 -->
-                <section class="footer-col" aria-label="Transmission">
+                <section class="footer-col">
                     <h3 class="footer-title">Transmission</h3>
                     <ul class="footer-list">
                         <li class="footer-item">

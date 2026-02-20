@@ -55,7 +55,7 @@
             <section class="hero" aria-labelledby="hero-title">
                 <div class="hero-bg-overlay"></div>
 
-                <div class="hero-content" class="row">
+                <div class="hero-content row">
                     <h1 id="hero-title">Du café. Du bois. Dans l’espace.</h1>
                     <p class="hero-subtitle">Le premier coffee shop intergalactique tenu par des castors. Oui.</p>
 
@@ -106,16 +106,27 @@
             </section>
 
             <section class="night-access-card" aria-labelledby="night-access-title">
-                <h2 id="night-access-title">Et pour les plus courageux...</h2>
+                <!-- TITRE : 2 versions -->
+                <h2 id="night-access-title" class="night-access-title">
+                    <span class="is-day">Et pour les plus courageux...</span>
+                    <span class="is-night" hidden>Et pour les plus peureux...</span>
+                </h2>
                 <div class="night-access-left">
-                    <ul class="night-access-questions">
-                        <li>Vous n’êtes pas un castor ?</li>
-                        <li>Vous aimez le café ?</li>
-                        <li>Vous acceptez facilement les décisions discutables ?</li>
+                    <!-- LISTE : 2 versions -->
+                    <ul class="night-access-questions is-day">
+                    <li>Vous n’êtes pas un castor ?</li>
+                    <li>Vous aimez le café ?</li>
+                    <li>Vous acceptez facilement les décisions discutables ?</li>
+                    </ul>
+
+                    <ul class="night-access-questions is-night" hidden>
+                    <li>Vous n’aimez pas la nuit ?</li>
+                    <li>Vous préférez les boissons sans caféine ?</li>
+                    <li>Vous n’aimez pas trop l’autorité ?</li>
                     </ul>
                 </div>
                 <div class="night-access-right">
-                    <button class="btn-night" type="button">
+                    <button class="btn-night" type="button" data-open-overlay="nightOverlay">
                     OUI
                     </button>
                     <p class="night-access-hint">
@@ -126,7 +137,7 @@
         </main>
 
         <footer>
-            <div class="container-col-footer" class="col">
+            <div class="container-col-footer col">
                 <!-- Colonne 1 -->
                 <section class="footer-col" aria-label="Castronaute Coffee and more">
                     <h3 class="footer-title">Castronaute Coffee… and more</h3>
@@ -161,5 +172,43 @@
                 <p class="footer-copyright"> © <strong>Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
             </div>
         </footer>
+
+        <!-- 🌙 Night Overlay (bascule nuit) -->
+        <section class="night-overlay" id="nightOverlay" role="dialog" aria-modal="true" aria-labelledby="nightOverlayTitle" aria-describedby="nightOverlayDesc" hidden>
+
+            <!-- Fond cliquable pour fermer -->
+            <div class="night-overlay-backdrop" data-close="true"></div>
+
+            <!-- Fenêtre -->
+            <div class="night-overlay-panel">
+                <button class="night-overlay-close" type="button" aria-label="Fermer" data-close="true">✕</button>
+
+               <!-- 1) ANALYSE EN COURS + dots mobiles -->
+                <h2 id="nightOverlayTitle" class="night-overlay-title">ANALYSE EN COURS<span id="nightDots" aria-hidden="true">…</span></h2>
+
+                <!-- 2) Le "terminal" -->
+                <pre class="night-overlay-terminal" id="nightTerminal" aria-live="polite"></pre>
+
+                <!-- 3) Ligne STATUT + dots mobiles puis ACCEPTÉ -->
+                <p class="night-overlay-status" aria-live="polite">
+                    <span class="night-status-label">STATUT</span>
+                    <span class="night-status-dots" id="nightStatusDots" aria-hidden="true">.....</span>
+                    <span class="night-status-result" id="nightStatusResult" hidden>ACCEPTÉ</span>
+                </p>
+
+                <!-- 4) Dernière ligne ACCÈS AUTORISÉ (affichée à la fin) -->
+                <p class="night-overlay-final" id="nightFinal" hidden>ACCÈS AUTORISÉ</p>
+
+                <!-- 5) Le texte source à afficher dans le terminal -->
+                <template id="nightScript">
+                ESPÈCE : HUMAIN
+                NIVEAU DE FATIGUE : COMPATIBLE
+                COMPÉTENCES : INUTILES
+                AFFINITÉ AU CAFÉ : FORTE
+                RAPPORT À L’AUTORITÉ : FAIBLE
+                PRISE DE DÉCISION : IRRÉFLÉCHIE
+                </template>
+            </div>
+        </section>
     </body>
 </html>

@@ -33,7 +33,7 @@
                 </button>
 
                 <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+                <div class="nav-menu" id="nav-menu">
                     <ul>
                         <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
@@ -50,13 +50,32 @@
                 <div class="menu-bg-overlay"></div>
 
                 <div class="menu-content row">
+                    <p class="menu-kicker">Station de ravitaillement — Secteur comestible</p>
                     <h1 id="menu-title">Ravitaillement</h1>
                     <p class="menu-subtitle">Des boissons. Des snacks. Préparés avec soin, parfois avec quelques effets secondaires…</p>
                 </div>
             </section>
 
-            <section class="drink">
-                <h2>Cafés orbitaux</h2>
+            <nav class="menu-tabs" aria-label="Filtres du menu">
+                <button type="button" class="menu-tab is-active" data-filter="all" aria-pressed="true">
+                    Tout afficher
+                </button>
+
+                <button type="button" class="menu-tab" data-filter="drink" aria-pressed="false">
+                    Cafés orbitaux
+                </button>
+
+                <button type="button" class="menu-tab" data-filter="snack" aria-pressed="false">
+                    Snacks spatiaux
+                </button>
+            </nav>
+
+            <section class="drink" data-section="drink">
+                <header class="section-header">
+                    <p>Des liquides non identifiés chauds ou froids</p>
+                    <h2>Cafés orbitaux</h2>
+                    <span class="section-badge" aria-label="Nombre de références">06 références</span>
+                </header>
                 <div class="menu-grid">
 
                     <div class="menu_card">
@@ -146,8 +165,12 @@
                 </div>
             </section>
 
-            <section class="snack">
-                <h2>Snacks spatiaux</h2>
+            <section class="snack" data-section="snack">
+                <header class="section-header">
+                    <p>Des solides suspects</p>
+                    <h2>Snacks spatiaux</h2>
+                    <span class="section-badge" aria-label="Nombre de références">03 références</span>
+                </header>
                 <div class="menu-grid">
 
                     <div class="menu_card">
@@ -204,7 +227,7 @@
                 </section>
 
                 <!-- Colonne 2 -->
-                <nav class="footer-col" aria-label="Navigation du site">
+                <nav class="footer-col">
                     <h3 class="footer-title">Navigation</h3>
                     <ul class="footer-list">
                         <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
@@ -215,7 +238,7 @@
                 </nav>
                 
                 <!-- Colonne 3 -->
-                <section class="footer-col" aria-label="Transmission">
+                <section class="footer-col">
                     <h3 class="footer-title">Transmission</h3>
                     <ul class="footer-list">
                         <li class="footer-item">

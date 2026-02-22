@@ -1,0 +1,68 @@
+
+/* =========================
+        FOOTER
+   ========================= */
+
+footer{
+    background: var(--structure);
+    color: rgba(255,255,255,.92);
+    padding: 24px 0 0;
+}
+
+footer section{
+    padding: 0;
+}
+
+.container-col-footer{
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 18px;
+    padding-bottom: 18px;
+}
+
+@media (max-width: 900px){ 
+    .container-col-footer{ 
+        grid-template-columns: 1fr; 
+    } 
+}
+
+.footer-title{ 
+    font-family: var(--font-title);
+    font-size: 24px;
+    margin: 0 0 10px; 
+}
+
+.footer-list{ 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+    display: grid; 
+    gap: 8px;
+    font-size: 14px;
+}
+
+.footer-text{
+    font-size: 14px;
+}
+
+.footer-link:hover{ 
+    color: var(--accent2); 
+    text-decoration: underline; 
+}
+
+.footer-bottom{
+    border-top: 1px solid rgba(255,255,255,.14);
+    padding: 14px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.footer-copyright strong{
+    color: var(--accent2);
+}

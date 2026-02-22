@@ -1,0 +1,87 @@
+
+/* ---------------- Night access ----------------- */
+.night-access-card{
+    background: var(--accent);
+    border: 1px solid rgba(76,201,240,.25);
+    box-shadow: 0 18px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06) inset;
+    padding: 36px 40px;
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.night-access-title{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 26px;
+    color: var(--text)
+}
+
+.night-access-left{
+    padding-right: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.night-access-right{
+    padding-left: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.night-access-right .btn-cta{
+    background: var(--bg2);
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.night-access-right .btn-cta:hover{
+    background: var(--accent2);
+}
+
+.night-access-questions{
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 14px;
+    color: var(--text);
+}
+
+.night-access-hint{
+    margin: 14px 0 0;
+    color: var(--text);
+    font-style: italic;
+    font-size: 16px;
+}
+
+@media (max-width: 900px){
+  .night-access-card{
+    grid-template-columns: 1fr;
+    padding: 26px 18px;
+  }
+
+  .night-access-card::before{
+    display: none;
+  }
+
+  .night-access-left{
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .night-access-right{
+    padding-left: 0;
+    margin-top: 18px;
+  }
+
+  .night-access-title{
+    margin-bottom: 18px;
+  }
+}

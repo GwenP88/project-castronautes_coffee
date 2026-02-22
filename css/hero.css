@@ -50,4 +50,7 @@
         display: flex;
         justify-content: center;
     }
+    .hero {
+        background-position: 30% center;
+    }
 }

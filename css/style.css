@@ -132,6 +132,10 @@ li:last-child {
     margin-bottom: 0;
 }
 
+nav ul li::before, footer ul li::before {
+    content: none;
+}
+
 /* ----- Switch is-day / is-night ----- */
 body[data-theme="night"] .is-day,
 body.is-night-mode .is-day{ display: none !important; }

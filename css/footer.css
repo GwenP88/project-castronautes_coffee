@@ -1,8 +1,3 @@
-
-/* =========================
-        FOOTER
-   ========================= */
-
 footer{
     background: var(--structure);
     color: rgba(255,255,255,.92);
@@ -13,13 +8,16 @@ footer section{
     padding: 0;
 }
 
-.container-col-footer{
-    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+.container-col-footer {
+    width: 100%; /* pleine largeur */
+    max-width: 100%;
+    padding: 0 48px 18px;
     margin: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* colonnes égales */
     gap: 18px;
-    padding-bottom: 18px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 @media (max-width: 900px){ 
@@ -65,4 +63,14 @@ footer section{
 
 .footer-copyright strong{
     color: var(--accent2);
+}
+
+.footer-col p,
+.footer-col ul,
+.footer-col li, .footer-bottom p {
+    font-size: clamp(11px, 0.9vw, 14px);
+}
+
+.footer-title {
+    font-size: clamp(14px, 1.4vw, 20px);
 }

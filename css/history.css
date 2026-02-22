@@ -1,13 +1,17 @@
-/* ---------------- History ----------------- */
+.history {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
 .history h2, .history p{
-    padding: 0 32px;
+    padding: 0;
 }
 
 .history-grid{
     display: grid;
     gap: 80px;
     margin-top: 40px;
-    padding: 0 32px;
+    padding: 0;
 }
 
 .history-row{
@@ -88,4 +92,22 @@
     .history-img img{ 
         height: 240px; 
         }
+}
+
+@media (max-width: 500px) {
+    .history {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .history-grid {
+        gap: 40px;
+    }
+
+    .history-row {
+        gap: 12px;
+    }
+    .history-content p {
+        text-align: left;
+    }
 }

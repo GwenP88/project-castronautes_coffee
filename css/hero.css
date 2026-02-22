@@ -39,3 +39,15 @@
 .hero-subtitle{
     color: rgba(255,255,255,.82);
 }
+
+@media (max-width: 450px) {
+    .hero-content {
+        align-items: flex-start;
+    }
+
+    .hero-cta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

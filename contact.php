@@ -3,7 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Castronautes Coffee - Contact et équipe</title>
+        <title>Castronautes Coffee - Accueil</title>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
@@ -16,7 +22,7 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
 
-
+        
         <!-- JS files -->
         <script src="js/script.js" defer></script>
         <script src="js/nav.js" defer></script>
@@ -28,38 +34,25 @@
     </head>
 
     <body>
-        <header>
-            <!-- Partie gauche - Logo -->
-            <nav class="container-nav">
-                <a class="nav-logo" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="assets/logo/logo.svg" alt="Logo du Castronautes Coffee" height="36">
-                </a>
-
-                <!-- Bouton burger (mobile) -->
-                <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="nav-burger" aria-hidden="true"></span>
-                </button>
-
-                <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu">
-                    <ul>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </div>    
-            </nav>
-        </header>
+        <?php include 'nav.php'; ?>
 
         <main>
-
             <!-- SECTION : ÉQUIPE -->
             <section class="team" id="equipe">
-                <header class="team-header">
-                    <h2 id="team-title">L’Équip(age)</h2>
-                    <p>Ils sont à l’origine du café, de l’ambiance et d’un certain nombre d’initiatives difficiles à expliquer.</p>
-                </header>
+
+                <section class="hero hero--team" aria-labelledby="menu-title">
+                    <div class="hero-content row">
+                        <h4 class="contact-kicker">Station de ravitaillement — Secteur comestible</h4>
+                        <h1 id="contact-title">L’Équip(age) & Le Bureau Des Plaintes</h1>
+                        <p class="contact-subtitle">Ils sont à l’origine du café, de l’ambiance et d’un certain nombre d’initiatives difficiles à expliquer.</p>
+                    </div>
+                </section>
+
+                <div class="section-header">
+                    <p>Des profils variés. Des compétences discutables. Une loyauté relative.</p>
+                    <h2>Les Responsables</h2>
+                    <span class="section-badge">(Théoriquement)</span>
+                </div>
 
                 <div class="cards">
                     <!-- Card 1 -->
@@ -79,12 +72,12 @@
                             <p class="card-like">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Adore : Collectionner les cuillères en bois, le silence, le café encore brûlant.
+                                </span>Adore : Collectionner les cuillères en bois, le silence et le café encore brûlant.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Déteste : les réunions sans ordre du jour, les phrases qui commencent par “normalement”.
+                                </span>Déteste : les réunions sans ordre du jour et les phrases qui commencent par “normalement”.
                             </p>
                         </div>
                     </div>
@@ -106,12 +99,12 @@
                             <p class="card-like">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Adore : Réparer presque tout avec des cure-dents, le bois brut, les machines capricieuses.
+                                </span>Adore : Réparer presque tout avec des cure-dents, le bois brut et les machines capricieuses.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Déteste : les notices, les boutons qui font bip sans raison.
+                                </span>Déteste : les notices et les boutons qui font bip sans raison.
                             </p>
                         </div>
                     </div>
@@ -133,12 +126,12 @@
                             <p class="card-like">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Adore : Goûter sans raison valable, partir sans itinéraire, revenir avec une tasse différente.
+                                </span>Adore : Goûter sans raison valable, partir sans itinéraire et revenir avec une tasse différente.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
                                     <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
-                                </span>Déteste : Le décaféiné, rentrer trop tôt, expliquer où il était.
+                                </span>Déteste : Le décaféiné, rentrer trop tôt et expliquer où il était.
                             </p>
                         </div>
                     </div>
@@ -147,10 +140,10 @@
 
             <!-- SECTION : CONTACT -->
             <section class="contact" id="contact">
-                <header class="contact-header">
+                <div class="contact-header">
                     <h2 id="contact-title">Contact</h2>
                     <p>Un doute existentiel, une anomalie, une question caféinée ? Écrivez-nous.</p>
-                </header>
+                </div>
 
                 <div class="contact-grid">
                 <!-- Formulaire (2/3) -->
@@ -195,42 +188,6 @@
                 </div>
             </section>
         </main>
-
-        <footer>
-            <div class="container-col-footer col">
-                <!-- Colonne 1 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Castronaute Coffee… and more</h3>
-                    <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
-                </section>
-
-                <!-- Colonne 2 -->
-                <nav class="footer-col">
-                    <h3 class="footer-title">Navigation</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
-                        <li class="footer-item"><a class="footer-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Colonne 3 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Transmission</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item">
-                            <a class="footer-link" href="mailto:email@castronaute.local">email@castronaute.local</a>
-                        </li>
-                        <li class="footer-item">Fréquence : <span class="footer-freq">42.0 MHz</span> (à peu près)</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Bas de footer -->
-            <div class="footer-bottom" aria-label="Mentions">
-                <p class="footer-copyright"> © <strong>Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
     </body>
 </html>

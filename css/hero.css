@@ -54,3 +54,26 @@
         background-position: 30% center;
     }
 }
+
+/* ----- Hero — Pages internes (menu & contact) ----- */
+
+.hero--menu,
+.hero--team {
+    background: url("../assets/other/space.png") center / cover no-repeat;
+    min-height: 35svh;
+}
+
+.hero--menu .hero-content,
+.hero--team .hero-content {
+    align-items: flex-start;
+}
+
+.hero--menu::after,
+.hero--team::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.80));
+    z-index: 1;
+}
+

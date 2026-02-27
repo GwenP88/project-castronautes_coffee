@@ -1,40 +1,31 @@
 /* ================================================
-   CONTACT & ÉQUIPE PAGE
-   ================================================ */
-
-/* ================================================
    SECTION ÉQUIPE
    ================================================ */
 
 .team {
-    padding: 64px var(--gutter);
+    padding: 0;
     box-sizing: border-box;
+    background: var(--bg);
+    scroll-margin-top: 80px;
 }
 
-.team-header {
-    text-align: center;
-    margin-bottom: 52px;
+.team .section-header {
+    padding: 48px var(--gutter) 0;
+    box-sizing: border-box;
+    margin-bottom: 0;
 }
 
-.team-header h2 {
-    margin-bottom: 10px;
+.team .cards {
+    padding-top: 32px;
 }
 
-.team-header p {
-    color: var(--text);
-    opacity: 0.7;
-    max-width: 60ch;
-    margin: 0 auto;
-    font-style: italic;
-    font-size: clamp(13px, 1.1vw, 17px);
-}
-
-/* ----- Grille cartes équipe ----- */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
-    align-items: start;
+    align-items: stretch;
+    padding: 48px var(--gutter) 56px;
+    box-sizing: border-box;
 }
 
 /* ----- Carte membre ----- */
@@ -42,6 +33,7 @@
     background: var(--bg2);
     border-radius: var(--radius);
     border: var(--border);
+    border-top: 2px solid var(--accent);
     box-shadow: var(--shadow);
     overflow: hidden;
     display: flex;
@@ -51,13 +43,14 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2), 0 0 24px rgba(127, 168, 160, 0.20);
 }
 
 .card-img {
     width: 100%;
-    height: 220px;
+    height: 280px;
     object-fit: cover;
+    object-position: center 20%;
     display: block;
     transition: transform 400ms ease;
 }
@@ -74,7 +67,6 @@
     flex: 1;
 }
 
-/* Nom du castor */
 .card-name {
     font-size: clamp(17px, 1.6vw, 22px);
     margin: 0 0 2px;
@@ -92,7 +84,6 @@
     line-height: 1.5;
 }
 
-/* Description */
 .card-desc {
     font-size: clamp(12px, 1vw, 15px);
     color: var(--text);
@@ -101,7 +92,6 @@
     line-height: 1.6;
 }
 
-/* Like / Unlike */
 .card-like,
 .card-unlike {
     font-size: clamp(11px, 0.9vw, 14px);
@@ -131,6 +121,11 @@
     margin-top: 2px;
 }
 
+.card-icon img {
+    width: 34px;
+    height: 34px;
+}
+
 /* ================================================
    SECTION CONTACT
    ================================================ */
@@ -139,6 +134,7 @@
     padding: 64px var(--gutter);
     box-sizing: border-box;
     background: var(--bg2);
+    scroll-margin-top: 80px;
 }
 
 .contact-header {
@@ -148,6 +144,7 @@
 
 .contact-header h2 {
     margin-bottom: 10px;
+    text-shadow: 0 0 28px rgba(127, 168, 160, 0.40);
 }
 
 .contact-header p {
@@ -164,12 +161,11 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 64px;
-    align-items: center;
+    align-items: stretch;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* ----- Formulaire ----- */
 .container-form {
     width: 100%;
 }
@@ -180,7 +176,7 @@
     gap: 22px;
 }
 
-/* Champ */
+/* ----- Champs ----- */
 .form-field {
     display: flex;
     flex-direction: column;
@@ -234,7 +230,7 @@
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
-/* Erreur */
+/* ----- Erreurs ----- */
 .form-error {
     font-size: clamp(10px, 0.85vw, 13px);
     color: #ff6b6b;
@@ -253,7 +249,7 @@
     box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
 }
 
-/* Checkbox */
+/* ----- Checkbox ----- */
 .form-check {
     display: flex;
     align-items: center;
@@ -277,7 +273,7 @@
     font-style: italic;
 }
 
-/* Bouton submit */
+/* ----- Bouton submit ----- */
 .form-submit {
     align-self: flex-start;
     display: inline-block;
@@ -302,12 +298,13 @@
     transform: translateY(-2px);
 }
 
-/* Note délais */
+/* ----- Note délais ----- */
 .form-note {
     padding: 14px 18px;
     background: var(--bg);
     border-radius: 10px;
     border: var(--border);
+    border-top: 2px solid var(--accent);
 }
 
 .form-note-title {
@@ -318,7 +315,6 @@
     text-transform: uppercase;
     color: var(--accent2);
     margin: 0 0 4px !important;
-    opacity: 1;
 }
 
 .form-note-text {
@@ -332,14 +328,13 @@
 /* ----- Illustration ----- */
 .contact-media {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
 }
 
 .contact-img {
     width: 100%;
-    max-width: 260px;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius);
     opacity: 0.88;
     filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.3));
@@ -349,32 +344,17 @@
    RESPONSIVE
    ================================================ */
 
-/* Cartes équipe */
 @media (max-width: 1024px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 640px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .team {
-        padding: 40px 20px;
-    }
-
-    .team-header {
-        margin-bottom: 32px;
-    }
-}
-
-/* Formulaire contact */
 @media (max-width: 900px) {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 36px;
+        align-items: start;
     }
 
     .contact-media {
@@ -382,11 +362,16 @@
     }
 
     .contact-img {
-        max-width: 180px;
+        height: 260px;
     }
 }
 
 @media (max-width: 640px) {
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 32px 20px 40px;
+    }
+
     .contact {
         padding: 40px 20px;
     }
@@ -398,6 +383,5 @@
     .form-submit {
         width: 100%;
         text-align: center;
-        justify-content: center;
     }
 }

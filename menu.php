@@ -3,7 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Castronautes Coffee - Menu</title>
+        <title>Castronautes Coffee - Accueil</title>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
@@ -16,7 +22,7 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
 
-
+        
         <!-- JS files -->
         <script src="js/script.js" defer></script>
         <script src="js/nav.js" defer></script>
@@ -27,39 +33,15 @@
 
     </head>
     <body>
-        <header>
-            <!-- Partie gauche - Logo -->
-            <nav class="container-nav">
-                <a class="nav-logo" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="assets/logo/logo.svg" alt="Logo du Castronautes Coffee" height="36">
-                </a>
-
-                <!-- Bouton burger (mobile) -->
-                <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="nav-burger" aria-hidden="true"></span>
-                </button>
-
-                <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu">
-                    <ul>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </div>    
-            </nav>
-        </header>
+        <?php include 'nav.php'; ?>
 
         <main>
             <!-- section titre -->
-            <section class="menu" aria-labelledby="menu-title">
-                <div class="menu-bg-overlay"></div>
-
-                <div class="menu-content row">
+            <section class="hero hero--menu" aria-labelledby="menu-title">
+                <div class="hero-content row">
                     <h4 class="menu-kicker">Station de ravitaillement — Secteur comestible</h4>
                     <h1 id="menu-title">Ravitaillement</h1>
-                    <p class="menu-subtitle">Des boissons. Des snacks. Préparés avec soin, parfois avec quelques effets secondaires…</p>
+                    <p class="hero-subtitle">Des boissons. Des snacks. Préparés avec soin, parfois avec quelques effets secondaires…</p>
                 </div>
             </section>
 
@@ -78,11 +60,11 @@
             </nav>
 
             <section class="drink" data-section="drink">
-                <header class="section-header">
+                <div class="section-header">
                     <p>Des liquides non identifiés chauds ou froids</p>
                     <h2>Cafés orbitaux</h2>
                     <span class="section-badge" aria-label="Nombre de références">06 références</span>
-                </header>
+                </div>
                 <div class="menu-grid">
 
                     <div class="menu_card">
@@ -92,9 +74,9 @@
                                 <span class="is-day">Latte “Nébuleuse Noisette”</span>
                                 <span class="is-night" hidden>Artefact LTT-7</span>
                             </h3>
-                            <p>Mousse épaisse, douceur noisette, légère poussière d’étoiles cacao</p>
+                            <p>Mousse épaisse, douceur noisette, légère poussière d’étoiles cacao.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Attachement émotionnel excessif à la tasse</p>
+                                <p><i class="fa-solid fa-radiation"></i>Attachement émotionnel excessif à la tasse.</p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +90,7 @@
                             </h3>
                             <p>Lait onctueux, contraste doux-amer, finale lumineuse.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Optimisme injustifié face à des situations complexes</p>
+                                <p><i class="fa-solid fa-radiation"></i>Optimisme injustifié face à des situations complexes.</p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +102,7 @@
                                 <span class="is-day">Espresso “Impact de Comète”</span>
                                 <span class="is-night" hidden>Substance IMP-1</span>
                             </h3>
-                            <p>Court, intense, percutant, étonnamment réconfortant</p>
+                            <p>Court, intense, percutant, étonnamment réconfortant.</p>
                             <div class="risk">
                                 <p><i class="fa-solid fa-radiation"></i>Prise de décision immédiate sans consultation préalable.</p>
                             </div>
@@ -134,9 +116,9 @@
                                 <span class="is-day">Mocha “Éclipse Chocolat”</span>
                                 <span class="is-night" hidden>Référence MCK-6</span>
                             </h3>
-                            <p>Cacao profond, café intense, obscurité rassurante</p>
+                            <p>Cacao profond, café intense, obscurité rassurante.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Sensation de clarté mentale trompeuse</p>
+                                <p><i class="fa-solid fa-radiation"></i>Sensation de clarté mentale trompeuse.</p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +130,9 @@
                                 <span class="is-day">Cold Brew “Cryo-Rivière”</span>
                                 <span class="is-night" hidden>Carburant CRYO-RIVER</span>
                             </h3>
-                            <p>Infusion lente, fraîche, claire, mystérieusement efficace</p>
+                            <p>Infusion lente, fraîche, claire, mystérieusement efficace.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Ne pas secouer pendant l’hyper-saut</p>
+                                <p><i class="fa-solid fa-radiation"></i>Ne pas secouer pendant l’hyper-saut.</p>
                             </div>
                         </div>
                     </div>
@@ -164,7 +146,7 @@
                             </h3>
                             <p>Equilibre parfait, texture soyeuse, sensation de stabilité prolongée.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Impression erronée que tout est parfaitement maîtrisé</p>
+                                <p><i class="fa-solid fa-radiation"></i>Impression erronée que tout est parfaitement maîtrisé.</p>
                             </div>
                         </div>
                     </div>
@@ -173,11 +155,11 @@
             </section>
 
             <section class="snack" data-section="snack">
-                <header class="section-header">
+                <div class="section-header">
                     <p>Des solides suspects</p>
                     <h2>Snacks spatiaux</h2>
                     <span class="section-badge" aria-label="Nombre de références">03 références</span>
-                </header>
+                </div>
                 <div class="menu-grid">
 
                     <div class="menu_card">
@@ -187,9 +169,9 @@
                                 <span class="is-day">Cookie “Astéroïde aux Pépites”</span>
                                 <span class="is-night" hidden>Unité CR-UNCH-3</span>
                             </h3>
-                            <p>Biscuit irrégulier, pépites généreuses, trajectoire imprévisible</p>
+                            <p>Biscuit irrégulier, pépites généreuses, trajectoire imprévisible.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Envie irrépressible d’en reprendre “pour équilibrer”</p>
+                                <p><i class="fa-solid fa-radiation"></i>Envie irrépressible d’en reprendre “pour équilibrer”.</p>
                             </div>
                         </div>
                     </div>
@@ -201,9 +183,9 @@
                                 <span class="is-day">Brownie “Trou Noir” Chocolat</span>
                                 <span class="is-night" hidden>Dossier TNC-8</span>
                             </h3>
-                            <p>Cœur fondant, chocolat dense, absorption totale de l’attention</p>
+                            <p>Cœur fondant, chocolat dense, absorption totale de l’attention.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Perte temporaire de la notion du temps</p>
+                                <p><i class="fa-solid fa-radiation"></i>Perte temporaire de la notion du temps.</p>
                             </div>
                         </div>
                     </div>
@@ -215,51 +197,15 @@
                                 <span class="is-day">Sablé “Orbite Vanillée”</span>
                                 <span class="is-night" hidden>Instance ORB-2-V</span>
                             </h3>
-                            <p>Texture friable, douceur stable, rotation lente autour du café</p>
+                            <p>Texture friable, douceur stable, rotation lente autour du café.</p>
                             <div class="risk">
-                                <p><i class="fa-solid fa-radiation"></i>Peut s’effriter en orbite</p>
+                                <p><i class="fa-solid fa-radiation"></i>Peut s’effriter en orbite.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-
-        <footer>
-            <div class="container-col-footer col">
-                <!-- Colonne 1 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Castronaute Coffee… and more</h3>
-                    <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
-                </section>
-
-                <!-- Colonne 2 -->
-                <nav class="footer-col">
-                    <h3 class="footer-title">Navigation</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
-                        <li class="footer-item"><a class="footer-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Colonne 3 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Transmission</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item">
-                            <a class="footer-link" href="mailto:email@castronaute.local">email@castronaute.local</a>
-                        </li>
-                        <li class="footer-item">Fréquence : <span class="footer-freq">42.0 MHz</span> (à peu près)</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Bas de footer -->
-            <div class="footer-bottom" aria-label="Mentions">
-                <p class="footer-copyright"> © <strong>Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
     </body>
 </html>

@@ -33,29 +33,7 @@
 
     </head>
     <body>
-        <header>
-            <!-- Partie gauche - Logo -->
-            <nav class="container-nav">
-                <a class="nav-logo" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="assets/logo/logo.svg" alt="Logo du Castronautes Coffee" height="36">
-                </a>
-
-                <!-- Bouton burger (mobile) -->
-                <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="nav-burger" aria-hidden="true"></span>
-                </button>
-
-                <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu">
-                    <ul>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </div>    
-            </nav>
-        </header>
+        <?php include 'nav.php'; ?>
 
         <main>
             <!-- section hero -->
@@ -68,7 +46,7 @@
                     <h3 class="hero-subtitle">Le premier coffee shop intergalactique tenu par des castors. Oui...</h3>
 
                     <div class="hero-cta">
-                        <a class="btn-cta" href="menu.html">Découvrir le Menu Galactique</a>
+                        <a class="btn-cta" href="menu.php">Découvrir le Menu Galactique</a>
                     </div>
                 </div>
             </section>
@@ -107,14 +85,13 @@
                         </div>
 
                         <div class="history-content">
-                            <p>Puis certains visiteurs commencent à remarquer des détails : 
-                                <ul>
-                                    <li>Des outils rangés trop soigneusement pour être utiles,</li>
-                                    <li>Des portes toujours fermées, même quand il n’y a personne derrière,</li>
-                                    <li>Des conversations qui s’interrompent pile au moment où elles deviennent intéressantes.</li>
-                                </ul>
-                                <p>Les règles n’ont pas disparu… elles ont simplement été remplacées. À partir de ce moment, il ne s’agit plus seulement de café.<br>La suite est classée confidentielle...</p>
-                            </p>
+                            <p>Puis certains visiteurs commencent à remarquer des détails :</p> 
+                            <ul>
+                                <li>Des outils rangés trop soigneusement pour être utiles,</li>
+                                <li>Des portes toujours fermées, même quand il n’y a personne derrière,</li>
+                                <li>Des conversations qui s’interrompent pile au moment où elles deviennent intéressantes.</li>
+                            </ul>
+                            <p>Les règles n’ont pas disparu… elles ont simplement été remplacées. À partir de ce moment, il ne s’agit plus seulement de café.<br>La suite est classée confidentielle...</p>
                         </div>
                     </article>
                 </div>
@@ -150,80 +127,6 @@
                 </div>  
             </section>
         </main>
-
-        <footer>
-            <div class="container-col-footer col">
-                <!-- Colonne 1 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Castronaute Coffee… and more</h3>
-                    <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
-                </section>
-
-                <!-- Colonne 2 -->
-                <nav class="footer-col">
-                    <h3 class="footer-title">Navigation</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
-                        <li class="footer-item"><a class="footer-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="footer-item"><a class="footer-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Colonne 3 -->
-                <section class="footer-col">
-                    <h3 class="footer-title">Transmission</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item">
-                            <a class="footer-link" href="mailto:email@castronaute.local">email@castronaute.local</a>
-                        </li>
-                        <li class="footer-item">Fréquence : <span class="footer-freq">42.0 MHz</span> (à peu près)</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Bas de footer -->
-            <div class="footer-bottom" aria-label="Mentions">
-                <p class="footer-copyright"><strong>© Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
-            </div>
-        </footer>
-
-        <!-- Night Overlay (bascule nuit) -->
-        <section class="night-overlay" id="nightOverlay" role="dialog" aria-modal="true" aria-labelledby="nightOverlayTitle" aria-describedby="nightOverlayDesc" hidden>
-
-            <!-- Fond cliquable pour fermer -->
-            <div class="night-overlay-backdrop" data-close="true"></div>
-
-            <!-- Fenêtre -->
-            <div class="night-overlay-panel">
-                <button class="night-overlay-close" type="button" aria-label="Fermer" data-close="true">✕</button>
-
-               <!-- 1) ANALYSE EN COURS + dots mobiles -->
-                <h2 id="nightOverlayTitle" class="night-overlay-title">ANALYSE EN COURS<span id="nightDots" aria-hidden="true">…</span></h2>
-
-                <!-- 2) Le "terminal" -->
-                <pre class="night-overlay-terminal" id="nightTerminal" aria-live="polite"></pre>
-
-                <!-- 3) Ligne STATUT + dots mobiles puis ACCEPTÉ -->
-                <p class="night-overlay-status" aria-live="polite">
-                    <span class="night-status-label">STATUT</span>
-                    <span class="night-status-dots" id="nightStatusDots" aria-hidden="true">.....</span>
-                    <span class="night-status-result" id="nightStatusResult" hidden>ACCEPTÉ</span>
-                </p>
-
-                <!-- 4) Dernière ligne ACCÈS AUTORISÉ (affichée à la fin) -->
-                <p class="night-overlay-final" id="nightFinal" hidden>ACCÈS AUTORISÉ</p>
-
-                <!-- 5) Le texte source à afficher dans le terminal -->
-                <template id="nightScript">
-                ESPÈCE : HUMAIN
-                NIVEAU DE FATIGUE : COMPATIBLE
-                COMPÉTENCES : INUTILES
-                AFFINITÉ AU CAFÉ : FORTE
-                RAPPORT À L’AUTORITÉ : FAIBLE
-                PRISE DE DÉCISION : IRRÉFLÉCHIE
-                </template>
-            </div>
-        </section>
+        <?php include 'footer.php'; ?>
     </body>
 </html>

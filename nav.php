@@ -1,4 +1,5 @@
 <header>
+    <canvas class="nav-stars" aria-hidden="true"></canvas>
     <!-- Partie gauche - Logo -->
     <nav class="container-nav">
         <a class="nav-logo" href="index.php" aria-label="Retour à l'accueil">

@@ -11,6 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
+        <script>
+            if (localStorage.getItem('theme') === 'night') {
+                document.documentElement.setAttribute('data-theme', 'night');
+            }
+        </script>
+
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
@@ -19,6 +25,7 @@
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/team.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
 

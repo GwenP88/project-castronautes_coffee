@@ -56,11 +56,18 @@
 }
 
 /* ----- Hero — Pages internes (menu & contact) ----- */
-
 .hero--menu,
 .hero--team {
+    background: url("../assets/other/nature.png") center / cover no-repeat;
+    min-height: 20svh;
+}
+
+body[data-theme="night"] .hero--menu,
+body.is-night-mode .hero--menu,
+body[data-theme="night"] .hero--team,
+body.is-night-mode .hero--team {
     background: url("../assets/other/space.png") center / cover no-repeat;
-    min-height: 35svh;
+    min-height: 20svh;
 }
 
 .hero--menu .hero-content,

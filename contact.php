@@ -11,6 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
+        <script>
+            if (localStorage.getItem('theme') === 'night') {
+                document.documentElement.setAttribute('data-theme', 'night');
+            }
+        </script>
+
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
@@ -19,6 +25,7 @@
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/team.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
 
@@ -140,6 +147,7 @@
 
             <!-- SECTION : CONTACT -->
             <section class="contact" id="contact">
+                <canvas class="contact-stars" aria-hidden="true"></canvas>
                 <div class="contact-header">
                     <h2 id="contact-title">Contact</h2>
                     <p>Un doute existentiel, une anomalie, une question caféinée ? Écrivez-nous.</p>
@@ -168,9 +176,9 @@
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" id="contact-consent" name="consent" required
-                                />
-                                <label for="contact-consent">J’accepte les conséquences potentielles.</label>
+                                <input type="checkbox" id="contact-consent" name="consent" required />
+                                <label for="contact-consent">J'accepte les conséquences potentielles.</label>
+                                <p class="form-error">Impossible d’envoyer ça sans un minimum de courage.</p>
                             </div>
 
                             <button class="form-submit" type="submit">Envoyer (à mes risques et périls)</button>

@@ -11,7 +11,7 @@
     --text: #2B2B2B;
     --accent: #7FA8A0;
     --accent2: #F77F00;
-    --structure: #0E1628;
+    --structure: #1A2E2B; 
 
     /* UI */
     --container: 1120px;
@@ -22,8 +22,10 @@
 }
 
 /* ----- NUIT — Stellar Coffee ----- */
+
+html[data-theme="night"],
 body[data-theme="night"],
-body.is-night-mode{
+body.is-night-mode {
     --bg: #0B0F1A;
     --bg2: #131A2A;
     --text: #E6E9F0;
@@ -43,6 +45,7 @@ body{
     line-height: 1.7;
     font-size: 18px;
 }
+
 img{ 
     max-width: 100%; 
     display: block; 
@@ -170,4 +173,10 @@ body.is-night-mode .is-night[hidden]{ display: inline !important; }
     background: var(--accent2);
     text-shadow: 0 0 6px rgba(255,255,255,.55), 0 0 14px rgba(255,255,255,.35);
     transform: translateY(-2px);
+}
+
+body[data-theme="night"] .btn-cta:hover,
+body.is-night-mode .btn-cta:hover {
+    background: var(--accent2);
+    color: var(--structure);
 }

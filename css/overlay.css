@@ -1,0 +1,142 @@
+/* ================================================
+   NIGHT OVERLAY — Terminal Shell
+   ================================================ */
+
+.night-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.night-overlay[hidden] {
+    display: none !important;
+}
+
+/* ----- Fond sombre semi-transparent ----- */
+.night-overlay-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+/* ----- Fenêtre terminal ----- */
+.night-overlay-panel {
+    position: relative;
+    z-index: 1;
+    width: min(680px, 90vw);
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-top: 3px solid #4CC9F0;
+    border-radius: 8px;
+    padding: 40px 48px 48px;
+    box-shadow: 0 0 60px rgba(76, 201, 240, 0.15), 0 0 120px rgba(0, 0, 0, 0.8);
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* ----- Barre de titre style terminal ----- */
+.night-overlay-panel::before {
+    content: none;
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: #333;
+}
+
+/* ----- Bouton fermer ----- */
+.night-overlay-close {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #444;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 180ms ease;
+    font-family: inherit;
+}
+
+.night-overlay-close:hover {
+    color: #ff6b6b;
+}
+
+/* ----- Titre ANALYSE EN COURS ----- */
+.night-overlay-title {
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(13px, 1.4vw, 17px);
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #4CC9F0;
+    margin: 0 0 28px;
+    text-shadow: 0 0 12px rgba(76, 201, 240, 0.6);
+}
+
+/* ----- Terminal texte ----- */
+.night-overlay-terminal {
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(12px, 1.1vw, 15px);
+    color: #A5FFD6;
+    background: none;
+    border: none;
+    margin: 0 0 28px;
+    padding: 0;
+    white-space: pre;
+    line-height: 1.9;
+    min-height: 140px;
+    text-shadow: 0 0 8px rgba(165, 255, 214, 0.4);
+}
+
+/* ----- Ligne STATUT ----- */
+.night-overlay-status {
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(12px, 1.1vw, 15px);
+    color: #666;
+    letter-spacing: .1em;
+    margin: 0 0 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.night-status-label {
+    color: #555;
+}
+
+.night-status-dots {
+    color: #444;
+    letter-spacing: .2em;
+}
+
+.night-status-result {
+    color: #A5FFD6;
+    text-shadow: 0 0 10px rgba(165, 255, 214, 0.6);
+    font-weight: 700;
+}
+
+/* ----- ACCÈS AUTORISÉ ----- */
+.night-overlay-final {
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(16px, 1.8vw, 22px);
+    font-weight: 700;
+    letter-spacing: .18em;
+    color: #4CC9F0;
+    text-shadow: 0 0 20px rgba(76, 201, 240, 0.8), 0 0 40px rgba(76, 201, 240, 0.4);
+    margin: 0;
+    animation: flicker 600ms ease-in-out;
+}
+
+@keyframes flicker {
+    0%   { opacity: 0; }
+    30%  { opacity: 1; }
+    50%  { opacity: 0.4; }
+    70%  { opacity: 1; }
+    85%  { opacity: 0.6; }
+    100% { opacity: 1; }
+}

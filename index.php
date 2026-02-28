@@ -11,6 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
+        <script>
+            if (localStorage.getItem('theme') === 'night') {
+                document.documentElement.setAttribute('data-theme', 'night');
+            }
+        </script>
+        
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
@@ -19,6 +25,7 @@
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/team.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
 
@@ -118,13 +125,51 @@
                     </ul>
                 </div>
                 <div class="night-access-right">
-                    <button class="btn-cta" type="button" data-open-overlay="nightOverlay">
+                    <button class="btn-cta" type="button" data-open-overlay="nightOverlay" data-open-night>
                     OUI
                     </button>
                     <p class="night-access-hint">
                         <em>Cette action peut entraîner une légère perte de repères.</em>
                     </p>
                 </div>  
+            </section>
+
+            <!-- Night Overlay (bascule nuit) -->
+            <section class="night-overlay" id="nightOverlay" role="dialog" aria-modal="true" aria-labelledby="nightOverlayTitle" aria-describedby="nightOverlayDesc" hidden>
+
+                <!-- Fond cliquable pour fermer -->
+                <div class="night-overlay-backdrop" data-close="true"></div>
+
+                <!-- Fenêtre -->
+                <div class="night-overlay-panel">
+                    <button class="night-overlay-close" type="button" aria-label="Fermer" data-close="true">✕</button>
+
+                <!-- 1) ANALYSE EN COURS + dots mobiles -->
+                    <h2 id="nightOverlayTitle" class="night-overlay-title">ANALYSE EN COURS<span id="nightDots" aria-hidden="true">...</span></h2>
+
+                    <!-- 2) Le "terminal" -->
+                    <pre class="night-overlay-terminal" id="nightTerminal" aria-live="polite"></pre>
+
+                    <!-- 3) Ligne STATUT + dots mobiles puis ACCEPTÉ -->
+                    <p class="night-overlay-status" aria-live="polite">
+                        <span class="night-status-label">STATUT</span>
+                        <span class="night-status-dots" id="nightStatusDots" aria-hidden="true">...</span>
+                        <span class="night-status-result" id="nightStatusResult" hidden>ACCEPTÉ</span>
+                    </p>
+
+                    <!-- 4) Dernière ligne ACCÈS AUTORISÉ (affichée à la fin) -->
+                    <p class="night-overlay-final" id="nightFinal" hidden>ACCÈS AUTORISÉ</p>
+
+                    <!-- 5) Le texte source à afficher dans le terminal -->
+                    <template id="nightScript">
+                    ESPÈCE : HUMAIN
+                    NIVEAU DE FATIGUE : COMPATIBLE
+                    COMPÉTENCES : INUTILES
+                    AFFINITÉ AU CAFÉ : FORTE
+                    RAPPORT À L’AUTORITÉ : FAIBLE
+                    PRISE DE DÉCISION : IRRÉFLÉCHIE
+                    </template>
+                </div>
             </section>
         </main>
         <?php include 'footer.php'; ?>

@@ -85,37 +85,4 @@
     grid-template-columns: 2fr 1fr;
 }
 
-@media (max-width: 900px){
-    .history-row, .history-row:nth-child(2){
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-    .history-img{ 
-        order: 1 !important;
-    }
-    .history-content{
-        order: 2 !important;
-    }
 
-    .history-img img{ 
-        height: 240px; 
-        }
-}
-
-@media (max-width: 500px) {
-    .history {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .history-grid {
-        gap: 40px;
-    }
-
-    .history-row {
-        gap: 12px;
-    }
-    .history-content p {
-        text-align: left;
-    }
-}

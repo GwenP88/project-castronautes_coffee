@@ -20,12 +20,6 @@ footer section{
     text-align: center;
 }
 
-@media (max-width: 900px){ 
-    .container-col-footer{ 
-        grid-template-columns: 1fr; 
-    } 
-}
-
 .footer-title{ 
     font-family: var(--font-title);
     font-size: 24px;

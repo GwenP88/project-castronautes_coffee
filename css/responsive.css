@@ -1,0 +1,324 @@
+/* ── NAV mobile (< 900px) ── */
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        padding: 12px 0;
+        background: var(--structure);
+        border-top: 1px solid rgba(255,255,255,.14);
+    }
+
+    .nav-menu.is-open {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 6px;
+        width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        display: block;
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+/* ── History : empilement vertical (< 900px) ── */
+@media (max-width: 900px) {
+    .history-row, .history-row:nth-child(2) {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .history-img {
+        order: 1 !important;
+    }
+
+    .history-content {
+        order: 2 !important;
+    }
+
+    .history-img img {
+        height: 240px;
+    }
+}
+
+/* ── Cards : 2 colonnes (< 1024px) ── */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Footer : 2 colonnes tablet (1024px → 466px) ── */
+@media (max-width: 1024px) and (min-width: 466px) {
+    .container-col-footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "col1 col2"
+            "col3 col2";
+    }
+
+    .container-col-footer .footer-col:nth-child(1) { grid-area: col1; }
+    .container-col-footer .footer-col:nth-child(2) { grid-area: col2; }
+    .container-col-footer .footer-col:nth-child(3) { grid-area: col3; }
+}
+
+/* ── Menu tabs : select mobile + grille 1 col (< 768px) ── */
+@media (max-width: 768px) {
+    .menu-tabs-desktop { display: none; }
+
+    .menu-tabs {
+        padding-bottom: 20px;
+    }
+
+    .menu-tabs-select {
+        display: block;
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,.25);
+        outline: none;
+        background: rgba(255,255,255,.08);
+        color: white;
+        font-size: 14px;
+        font-family: var(--font-title);
+        letter-spacing: .08em;
+        text-align: center;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+    }
+
+    .menu-tabs-select:focus {
+        border-color: rgba(255,255,255,.5);
+        outline: none;
+    }
+
+    .form-submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ── Cards : 1 colonne (< 768px) ── */
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 32px 20px 40px;
+    }
+
+    /* ── Night access : centré (< 768px) ── */
+    .night-access-questions {
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+/* ── Contact : 1 colonne (< 600px) ── */
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        align-items: start;
+    }
+
+    .contact-media {
+        display: none;
+    }
+
+    .contact {
+        padding: 40px 20px;
+    }
+
+    .contact-header {
+        margin-bottom: 32px;
+    }
+
+    .form-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ── Cards menu : 2 colonnes (< 1024px) ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Cards menu : image à gauche, texte à droite (768px → 426px) ── */
+@media (max-width: 768px) and (min-width: 426px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu_card {
+        flex-direction: row;
+    }
+
+    .menu_card img {
+        width: 160px;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .card_content {
+        flex: 1;
+        padding: 16px;
+    }
+}
+
+/* ── Overlay : marge latérale mobile (< 768px) ── */
+@media (max-width: 768px) {
+    .night-overlay {
+        padding: 0 20px;
+    }
+
+    .night-overlay-panel {
+        width: auto !important;
+        left: 0;
+        right: 0;
+        padding: 28px 24px 32px;
+    }
+
+    .night-overlay-terminal {
+        white-space: pre-wrap;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .night-overlay-panel {
+        width: auto !important;
+        min-width: 80vw;
+    }
+}
+
+/* ── Cards team : image à gauche, texte à droite (768px → 424px) ── */
+@media (max-width: 768px) and (min-width: 500px) {
+    .team .card {
+        flex-direction: row;
+    }
+
+    .team .card-img {
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+        object-position: center top;
+    }
+
+    .team .card-content {
+        flex: 1;
+    }
+}
+
+/* ── Menu grille + tabs : 1 colonne (< 640px) ── */
+@media (max-width: 640px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drink,
+    .snack {
+        padding: 32px 20px 40px;
+    }
+
+    .menu-tabs {
+        padding: 24px 20px;
+        gap: 8px;
+    }
+
+    .menu-tab {
+        font-size: 11px;
+        padding: 8px 18px;
+    }
+
+    .menu-content {
+        padding: var(--gutter) 20px 36px;
+    }
+}
+
+/* ── Cards menu : 1 colonne, image en haut (< 425px) ── */
+@media (max-width: 425px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu_card {
+        flex-direction: column;
+    }
+
+    .menu_card img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+/* ── Footer : 1 colonne mobile, nav en 2 cols (< 465px) ── */
+@media (max-width: 465px) {
+    .container-col-footer {
+        grid-template-columns: 1fr;
+        padding: 0 24px 18px;
+    }
+
+    .container-col-footer .footer-col:nth-child(2) .footer-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 16px;
+    }
+}
+
+/* ── Hero : alignement gauche, CTA pleine largeur (< 450px) ── */
+@media (max-width: 450px) {
+    .hero-content {
+        align-items: flex-start;
+    }
+
+    .hero-cta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero {
+        background-position: 30% center;
+    }
+}
+
+/* ── History : padding réduit (< 500px) ── */
+@media (max-width: 500px) {
+    .history {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .history-grid {
+        gap: 40px;
+    }
+
+    .history-row {
+        gap: 12px;
+    }
+
+    .history-content p {
+        text-align: left;
+    }
+}

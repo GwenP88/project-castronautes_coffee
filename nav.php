@@ -3,7 +3,7 @@
     <!-- Partie gauche - Logo -->
     <nav class="container-nav">
         <a class="nav-logo" href="index.php" aria-label="Retour à l'accueil">
-            <img src="assets/logo/logo.svg" alt="Logo du Castronautes Coffee" height="36">
+            <img src="assets/logo/logo.webp" alt="Logo du Castronautes Coffee" height="36">
         </a>
 
         <!-- Bouton burger (mobile) -->

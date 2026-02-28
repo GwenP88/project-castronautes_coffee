@@ -2,30 +2,42 @@
 
 const tabs = document.querySelectorAll('.menu-tab');
 const sections = document.querySelectorAll('[data-section]');
+const menuSelect = document.querySelector('.menu-tabs-select');
 
+function filterMenu(filter) {
+    // Mettre à jour les boutons desktop
+    tabs.forEach(function(t) {
+        const match = t.getAttribute('data-filter') === filter;
+        t.classList.toggle('is-active', match);
+        t.setAttribute('aria-pressed', match);
+    });
+
+    // Mettre à jour le select mobile
+    if (menuSelect) menuSelect.value = filter;
+
+    // Afficher / cacher les sections
+    sections.forEach(function(section) {
+        if (filter === 'all' || section.getAttribute('data-section') === filter) {
+            section.removeAttribute('hidden');
+        } else {
+            section.setAttribute('hidden', '');
+        }
+    });
+}
+
+// Boutons desktop
 tabs.forEach(function(tab) {
     tab.addEventListener('click', function() {
-
-        // Mettre à jour les tabs
-        tabs.forEach(function(t) {
-            t.classList.remove('is-active');
-            t.setAttribute('aria-pressed', 'false');
-        });
-        tab.classList.add('is-active');
-        tab.setAttribute('aria-pressed', 'true');
-
-        // Afficher / cacher les sections
-        const filter = tab.getAttribute('data-filter');
-
-        sections.forEach(function(section) {
-            if (filter === 'all' || section.getAttribute('data-section') === filter) {
-                section.removeAttribute('hidden');
-            } else {
-                section.setAttribute('hidden', '');
-            }
-        });
+        filterMenu(tab.getAttribute('data-filter'));
     });
 });
+
+// Select mobile
+if (menuSelect) {
+    menuSelect.addEventListener('change', function() {
+        filterMenu(this.value);
+    });
+}
 
 // fond contact stars night
 

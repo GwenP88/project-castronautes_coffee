@@ -20,14 +20,15 @@
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/overlay.css">
         <link rel="stylesheet" href="css/hero.css">
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/team.css">
+        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
+        <link rel="stylesheet" href="css/overlay.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
         
         <!-- JS files -->
@@ -53,17 +54,19 @@
             </section>
 
             <nav class="menu-tabs" aria-label="Filtres du menu">
-                <button type="button" class="menu-tab is-active" data-filter="all" aria-pressed="true">
-                    Tout afficher
-                </button>
+                <!-- Boutons desktop (cachés en mobile) -->
+                <div class="menu-tabs-desktop">
+                    <button type="button" class="menu-tab is-active" data-filter="all" aria-pressed="true">Tout afficher</button>
+                    <button type="button" class="menu-tab" data-filter="drink" aria-pressed="false">Cafés orbitaux</button>
+                    <button type="button" class="menu-tab" data-filter="snack" aria-pressed="false">Snacks spatiaux</button>
+                </div>
 
-                <button type="button" class="menu-tab" data-filter="drink" aria-pressed="false">
-                    Cafés orbitaux
-                </button>
-
-                <button type="button" class="menu-tab" data-filter="snack" aria-pressed="false">
-                    Snacks spatiaux
-                </button>
+                <!-- Select mobile (caché en desktop) -->
+                <select class="menu-tabs-select" aria-label="Filtrer le menu">
+                    <option value="all">Tout afficher</option>
+                    <option value="drink">Cafés orbitaux</option>
+                    <option value="snack">Snacks spatiaux</option>
+                </select>
             </nav>
 
             <section class="drink" data-section="drink">
@@ -75,7 +78,7 @@
                 <div class="menu-grid">
 
                     <div class="menu_card">
-                        <img src="assets/menu/D1.png" alt="Tasse de café chaud posée sur une soucoupe, tenue par des gants d’astronaute, avec une mousse scintillante évoquant un ciel étoilé" height="200">
+                        <img src="assets/menu/D1.webp" alt="Tasse de café chaud posée sur une soucoupe, tenue par des gants d’astronaute, avec une mousse scintillante évoquant un ciel étoilé" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Latte “Nébuleuse Noisette”</span>
@@ -89,7 +92,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/D2.png" alt="Tasse de café sur une soucoupe, avec une mousse multicolore en spirale évoquant une galaxie, sous un ciel étoilé aux aurores lumineuses" height="200">
+                        <img src="assets/menu/D2.webp" alt="Tasse de café sur une soucoupe, avec une mousse multicolore en spirale évoquant une galaxie, sous un ciel étoilé aux aurores lumineuses" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Cappuccino “Aurore Boréale”</span>
@@ -103,7 +106,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/D3.png" alt="Tasse de café noir fumant sur une soucoupe, tenue par des gants d’astronaute, avec la Terre et une explosion lumineuse en arrière-plan" height="200">
+                        <img src="assets/menu/D3.webp" alt="Tasse de café noir fumant sur une soucoupe, tenue par des gants d’astronaute, avec la Terre et une explosion lumineuse en arrière-plan" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Espresso “Impact de Comète”</span>
@@ -117,7 +120,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/D4.png" alt="Tasse de cappuccino sur une soucoupe, garnie de crème et de cacao, avec une éclipse solaire lumineuse en arrière-plan" height="200">
+                        <img src="assets/menu/D4.webp" alt="Tasse de cappuccino sur une soucoupe, garnie de crème et de cacao, avec une éclipse solaire lumineuse en arrière-plan" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Mocha “Éclipse Chocolat”</span>
@@ -131,7 +134,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/D5.png" alt="Verre de café glacé avec des glaçons sur une soucoupe, tenu par des gants d’astronaute, dans un paysage glacé" height="200">
+                        <img src="assets/menu/D5.webp" alt="Verre de café glacé avec des glaçons sur une soucoupe, tenu par des gants d’astronaute, dans un paysage glacé" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Cold Brew “Cryo-Rivière”</span>
@@ -145,7 +148,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/D6.png" alt="Tasse de café latte avec un motif en feuille sur la mousse, entourée d’un anneau lumineux doré évoquant une ambiance cosmique" height="200">
+                        <img src="assets/menu/D6.webp" alt="Tasse de café latte avec un motif en feuille sur la mousse, entourée d’un anneau lumineux doré évoquant une ambiance cosmique" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Flat White “Orbite Douce”</span>
@@ -170,7 +173,7 @@
                 <div class="menu-grid">
 
                     <div class="menu_card">
-                        <img src="assets/menu/S1.png" alt="Cookie aux pépites de chocolat posé sur une surface sombre, avec des éclats lumineux évoquant des météorites" height="200">
+                        <img src="assets/menu/S1.webp" alt="Cookie aux pépites de chocolat posé sur une surface sombre, avec des éclats lumineux évoquant des météorites" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Cookie “Astéroïde aux Pépites”</span>
@@ -184,7 +187,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/S2.png" alt="Brownie au chocolat au cœur fondant sur une soucoupe, avec un effet de trou noir lumineux en arrière-plan" height="200">
+                        <img src="assets/menu/S2.webp" alt="Brownie au chocolat au cœur fondant sur une soucoupe, avec un effet de trou noir lumineux en arrière-plan" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Brownie “Trou Noir” Chocolat</span>
@@ -198,7 +201,7 @@
                     </div>
 
                     <div class="menu_card">
-                        <img src="assets/menu/S3.png" alt="Biscuit sablé saupoudré de sucre devant une tasse de café, avec un effet de spirale lumineuse" height="200">
+                        <img src="assets/menu/S3.webp" alt="Biscuit sablé saupoudré de sucre devant une tasse de café, avec un effet de spirale lumineuse" height="200">
                         <div class="card_content">
                             <h3 class="menu-name">
                                 <span class="is-day">Sablé “Orbite Vanillée”</span>

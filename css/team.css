@@ -21,12 +21,14 @@
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes par défaut */
     gap: 28px;
     align-items: stretch;
     padding: 48px var(--gutter) 56px;
     box-sizing: border-box;
 }
+
+
 
 /* ----- Carte membre ----- */
 .card {

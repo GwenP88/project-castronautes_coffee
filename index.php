@@ -20,14 +20,15 @@
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/overlay.css">
         <link rel="stylesheet" href="css/hero.css">
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/team.css">
+        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
+        <link rel="stylesheet" href="css/overlay.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
         
         <!-- JS files -->
@@ -67,7 +68,7 @@
                     <!-- Row 1: image (1/3) + text (2/3) -->
                     <article class="history-row">
                         <div class="history-img">
-                            <img src="assets/other/Castronautes coffee.png" alt="Photo du Castronautes coffee, face au batiment" height="200"/>
+                            <img src="assets/other/CastronautesCoffee.webp" alt="Photo du Castronautes coffee, face au batiment" height="200"/>
                         </div>
 
                         <div class="history-content">
@@ -81,14 +82,14 @@
                             <p>Leur meilleure invention ? <strong>Le Bois Quantique</strong>. Ça pousse comme un arbre, mais ça sert aussi de carburant, de tasse, de fusée… et parfois de table. C’est ainsi qu’est né Castronaute Coffee… and more. Un lieu chaleureux, accueillant, presque normal.<br><em>"Fondé un mardi. Même si on ne se souvient plus lequel."</em><br>Le jour, on y sert des boissons chaudes et quelques snacks. Les recettes sont connues. Les gestes sont précis. Les horaires, eux, font de leur mieux.</p>
                         </div>
                         <div class="history-img">
-                            <img src="assets/other/arbreQuantique.png" alt="Photo d'un arbre quantique en pleine florauson au début du printemps lunaire" height="200"/>
+                            <img src="assets/other/arbreQuantique.webp" alt="Photo d'un arbre quantique en pleine florauson au début du printemps lunaire" height="200"/>
                         </div>
                     </article>
 
                     <!-- Row 3: image (1/3) + text (2/3) -->
                     <article class="history-row">
                         <div class="history-img">
-                            <img src="assets/crew/castorChut.png" alt="Photo d'un castor qui fait chut du doigt" height="200"/>
+                            <img src="assets/crew/castorChut.webp" alt="Photo d'un castor qui fait chut du doigt" height="200"/>
                         </div>
 
                         <div class="history-content">

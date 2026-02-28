@@ -187,33 +187,13 @@
 }
 
 /* ----- Responsive ----- */
-@media (max-width: 1024px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 640px) {
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .drink,
-    .snack {
-        padding: 32px 20px 40px;
-    }
+.menu-tabs-select { display: none; }
 
-    .menu-tabs {
-        padding: 24px 20px 0;
-        gap: 8px;
-    }
-
-    .menu-tab {
-        font-size: 11px;
-        padding: 8px 18px;
-    }
-
-    .menu-content {
-        padding: var(--gutter) 20px 36px;
-    }
+.menu-tabs-select option {
+    background: #1A2E2B;
+    color: white;
+    font-family: var(--font-title);
+    text-align: center;
 }

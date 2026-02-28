@@ -20,14 +20,15 @@
         <!-- CSS files -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/overlay.css">
         <link rel="stylesheet" href="css/hero.css">
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/team.css">
+        <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/night-access.css">
+        <link rel="stylesheet" href="css/overlay.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
         
         <!-- JS files -->
@@ -64,8 +65,8 @@
                 <div class="cards">
                     <!-- Card 1 -->
                     <div class="card">
-                        <img class="card-img is-day" src="assets/crew/castor1.png" alt="Castor astronaute souriant devant le Castronaute Coffee, en combinaison spatiale blanche, ambiance chaleureuse et café ouvert en arrière-plan" height="200"/>
-                        <img class="card-img is-night" src="assets/crew/castor1_N.png" alt="Castor astronaute en uniforme sombre avec casque et étoiles, devant le Castronaute Coffee éclairé sous un ciel nocturne étoilé" hidden height="200"/>
+                        <img class="card-img is-day" src="assets/crew/castor1.webp" alt="Castor astronaute souriant devant le Castronaute Coffee, en combinaison spatiale blanche, ambiance chaleureuse et café ouvert en arrière-plan" height="200"/>
+                        <img class="card-img is-night" src="assets/crew/castor1_N.webp" alt="Castor astronaute en uniforme sombre avec casque et étoiles, devant le Castronaute Coffee éclairé sous un ciel nocturne étoilé" hidden height="200"/>
                         <div class="card-content">
                             <h3 class="card-name">
                                 <span class="is-day">Écorce</span>
@@ -78,12 +79,14 @@
                             </p>
                             <p class="card-like">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-like.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-like-night.webp" alt="" hidden>
                                 </span>Adore : Collectionner les cuillères en bois, le silence et le café encore brûlant.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-unlike.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-unlike-night.webp" alt="" hidden>
                                 </span>Déteste : les réunions sans ordre du jour et les phrases qui commencent par “normalement”.
                             </p>
                         </div>
@@ -91,8 +94,8 @@
 
                     <!-- Card 2 -->
                     <div class="card">
-                        <img class="card-img is-day" src="assets/crew/castor2.png" alt="Castor astronaute souriant dans l’intérieur chaleureux du Castronaute Coffee, en combinaison spatiale claire devant le comptoir et les lampes suspendues" height="200"/>
-                        <img class="card-img is-night" src="assets/crew/castor2_N.png" alt="Castor astronaute souriant avec ceinture à outils et casque fermé, dans le Castronaute Coffee éclairé, prêt pour des opérations nocturnes" hidden height="200"/>
+                        <img class="card-img is-day" src="assets/crew/castor2.webp" alt="Castor astronaute souriant dans l’intérieur chaleureux du Castronaute Coffee, en combinaison spatiale claire devant le comptoir et les lampes suspendues" height="200"/>
+                        <img class="card-img is-night" src="assets/crew/castor2_N.webp" alt="Castor astronaute souriant avec ceinture à outils et casque fermé, dans le Castronaute Coffee éclairé, prêt pour des opérations nocturnes" hidden height="200"/>
                         <div class="card-content">
                             <h3 class="card-name">
                                 <span class="is-day">Sciure</span>
@@ -105,12 +108,14 @@
                             </p>
                             <p class="card-like">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-like.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-like-night.webp" alt="" hidden>
                                 </span>Adore : Réparer presque tout avec des cure-dents, le bois brut et les machines capricieuses.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-unlike.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-unlike-night.webp" alt="" hidden>
                                 </span>Déteste : les notices et les boutons qui font bip sans raison.
                             </p>
                         </div>
@@ -118,8 +123,8 @@
 
                     <!-- Card 3 -->
                     <div class="card">
-                        <img class="card-img is-day" src="assets/crew/castor3.png" alt="Castor astronaute souriant levant la main en signe de salut dans l’intérieur chaleureux du Castronaute Coffee" height="200"/>
-                        <img class="card-img is-night" src="assets/crew/castor3_N.png" alt="Castor astronaute souriant avec deux réservoirs de café fixés à son casque, dans l’intérieur chaleureux du Castronaute Coffee" hidden height="200"/>
+                        <img class="card-img is-day" src="assets/crew/castor3.webp" alt="Castor astronaute souriant levant la main en signe de salut dans l’intérieur chaleureux du Castronaute Coffee" height="200"/>
+                        <img class="card-img is-night" src="assets/crew/castor3_N.webp" alt="Castor astronaute souriant avec deux réservoirs de café fixés à son casque, dans l’intérieur chaleureux du Castronaute Coffee" hidden height="200"/>
                         <div class="card-content">
                             <h3 class="card-name">
                                 <span class="is-day">Moka</span>
@@ -132,12 +137,14 @@
                             </p>
                             <p class="card-like">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-like.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-like.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-like-night.webp" alt="" hidden>
                                 </span>Adore : Goûter sans raison valable, partir sans itinéraire et revenir avec une tasse différente.
                             </p>
                             <p class="card-unlike">
                                 <span class="card-icon">
-                                    <img src="assets/icon/Castor-unlike.png" alt="" aria-hidden="true" width="20" height="20">
+                                    <img class="is-day" src="assets/icon/Castor-unlike.webp" alt="" aria-hidden="true">
+                                    <img class="is-night" src="assets/icon/Castor-unlike-night.webp" alt="" hidden>
                                 </span>Déteste : Le décaféiné, rentrer trop tôt et expliquer où il était.
                             </p>
                         </div>
@@ -191,7 +198,7 @@
 
                     <!-- Image (1/3) -->
                     <aside class="contact-media" aria-label="Illustration de contact">
-                        <img class="contact-img" src="assets/other/send.png" alt="" height="200"/>
+                        <img class="contact-img" src="assets/other/send.webp" alt="" height="200"/>
                     </aside>
                 </div>
             </section>

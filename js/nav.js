@@ -74,3 +74,39 @@ if (navCanvas) {
     });
     requestAnimationFrame(drawNavStars);
 }
+
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+const currentHash = location.hash;
+
+function setActiveLink() {
+    const hash = location.hash;
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.classList.remove('is-active');
+        const href = link.getAttribute('href');
+
+        if (href === currentPage) {
+            link.classList.add('is-active');
+        }
+
+        if (currentPage === 'contact.html') {
+            if (hash === '#contact' && href === 'contact.html#contact') {
+                link.classList.add('is-active');
+            } else if (hash !== '#contact' && href === 'contact.html#equipe') {
+                link.classList.add('is-active');
+            }
+        }
+    });
+}
+
+// Au chargement
+setActiveLink();
+
+// Au clic sur un lien ancre
+document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+        setTimeout(setActiveLink, 50); // léger délai pour que l'URL se mette à jour
+    });
+});
+
+// Si l'utilisateur navigue avec les boutons précédent/suivant
+window.addEventListener('hashchange', setActiveLink);

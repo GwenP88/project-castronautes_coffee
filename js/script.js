@@ -1,21 +1,25 @@
-// filtres menu
+/* ══════════════════════════════════════════
+            MENU : filtres onglets
+   ══════════════════════════════════════════ */
 
-const tabs = document.querySelectorAll('.menu-tab');
-const sections = document.querySelectorAll('[data-section]');
+const tabs       = document.querySelectorAll('.menu-tab');
+const sections   = document.querySelectorAll('[data-section]');
 const menuSelect = document.querySelector('.menu-tabs-select');
 
+/* ── Appliquer un filtre ── */
 function filterMenu(filter) {
-    // Mettre à jour les boutons desktop
+
+    /* Boutons desktop */
     tabs.forEach(function(t) {
         const match = t.getAttribute('data-filter') === filter;
         t.classList.toggle('is-active', match);
         t.setAttribute('aria-pressed', match);
     });
 
-    // Mettre à jour le select mobile
+    /* Select mobile */
     if (menuSelect) menuSelect.value = filter;
 
-    // Afficher / cacher les sections
+    /* Afficher / cacher les sections */
     sections.forEach(function(section) {
         if (filter === 'all' || section.getAttribute('data-section') === filter) {
             section.removeAttribute('hidden');
@@ -25,48 +29,53 @@ function filterMenu(filter) {
     });
 }
 
-// Boutons desktop
+/* ── Boutons desktop ── */
 tabs.forEach(function(tab) {
     tab.addEventListener('click', function() {
         filterMenu(tab.getAttribute('data-filter'));
     });
 });
 
-// Select mobile
+/* ── Select mobile ── */
 if (menuSelect) {
     menuSelect.addEventListener('change', function() {
         filterMenu(this.value);
     });
 }
 
-// fond contact stars night
+/* ════════════════════════════════════════════
+        CONTACT : étoiles canvas (mode nuit)
+   ════════════════════════════════════════════ */
 
 const contactCanvas = document.querySelector('.contact-stars');
 
 if (contactCanvas) {
-    const ctx = contactCanvas.getContext('2d');
+    const ctx   = contactCanvas.getContext('2d');
     const COUNT = 80;
     const stars = [];
 
+    /* ── Redimensionner le canvas ── */
     function resizeContactCanvas() {
-        contactCanvas.width = contactCanvas.offsetWidth;
+        contactCanvas.width  = contactCanvas.offsetWidth;
         contactCanvas.height = contactCanvas.offsetHeight;
     }
 
+    /* ── Générer les étoiles ── */
     function initContactStars() {
         stars.length = 0;
         for (let i = 0; i < COUNT; i++) {
             stars.push({
-                x:      Math.random() * contactCanvas.width,
-                y:      Math.random() * contactCanvas.height,
-                r:      Math.random() * 1.8 + 0.3,
-                speed:  Math.random() * 0.006 + 0.002,
-                offset: Math.random() * Math.PI * 2,
+                x:         Math.random() * contactCanvas.width,
+                y:         Math.random() * contactCanvas.height,
+                r:         Math.random() * 1.8 + 0.3,
+                speed:     Math.random() * 0.006 + 0.002,
+                offset:    Math.random() * Math.PI * 2,
                 turquoise: Math.random() > 0.6
             });
         }
     }
 
+    /* ── Dessiner les étoiles (boucle d'animation) ── */
     function drawContactStars(t) {
         ctx.clearRect(0, 0, contactCanvas.width, contactCanvas.height);
         stars.forEach(function(s) {
@@ -81,6 +90,7 @@ if (contactCanvas) {
         requestAnimationFrame(drawContactStars);
     }
 
+    /* ── Init + resize ── */
     resizeContactCanvas();
     initContactStars();
     window.addEventListener('resize', function() {

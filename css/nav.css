@@ -1,7 +1,4 @@
-/* ================================================
-   HEADER & NAV
-   ================================================ */
-
+/* ── Nav : header sticky ── */
 header {
     position: sticky;
     top: 0;
@@ -9,7 +6,7 @@ header {
     background: var(--structure);
 }
 
-/* ----- Étoiles (mode nuit) ----- */
+/* ── Nav : étoiles (mode nuit) ── */
 .nav-stars {
     position: absolute;
     overflow: hidden;
@@ -21,13 +18,10 @@ header {
     opacity: 0;
     transition: opacity 600ms ease;
 }
-
 body[data-theme="night"] .nav-stars,
-body.is-night-mode .nav-stars {
-    opacity: 1;
-}
+body.is-night-mode .nav-stars { opacity: 1; }
 
-/* ----- Conteneur nav ----- */
+/* ── Nav : conteneur ── */
 .container-nav {
     position: relative;
     z-index: 1;
@@ -37,7 +31,7 @@ body.is-night-mode .nav-stars {
     padding-right: 32px;
 }
 
-/* ----- Logo ----- */
+/* ── Nav : logo ── */
 .nav-logo {
     position: absolute;
     left: 24px;
@@ -47,7 +41,6 @@ body.is-night-mode .nav-stars {
     place-items: center;
     z-index: 10;
 }
-
 .nav-logo::before {
     content: "";
     position: absolute;
@@ -57,7 +50,6 @@ body.is-night-mode .nav-stars {
     box-shadow: 0 10px 22px rgba(0,0,0,.25);
     z-index: 0;
 }
-
 .nav-logo img {
     position: relative;
     z-index: 1;
@@ -66,11 +58,8 @@ body.is-night-mode .nav-stars {
     display: block;
 }
 
-/* ----- Menu ----- */
-.nav-menu {
-    margin-left: auto;
-}
-
+/* ── Nav : menu ── */
+.nav-menu { margin-left: auto; }
 .nav-menu ul {
     display: flex;
     align-items: center;
@@ -80,7 +69,7 @@ body.is-night-mode .nav-stars {
     list-style: none;
 }
 
-/* ----- Liens ----- */
+/* ── Nav : liens ── */
 .nav-link {
     position: relative;
     display: inline-flex;
@@ -96,7 +85,6 @@ body.is-night-mode .nav-stars {
     background: transparent;
     transition: color 180ms ease, text-shadow 180ms ease;
 }
-
 .nav-link::after {
     content: "";
     position: absolute;
@@ -110,23 +98,16 @@ body.is-night-mode .nav-stars {
     transform-origin: left;
     transition: transform 400ms ease;
 }
-
 .nav-link:hover {
     color: rgba(255,255,255,.96);
     text-shadow: 0 0 8px color-mix(in srgb, var(--accent2) 70%, transparent),
                  0 0 18px color-mix(in srgb, var(--accent2) 40%, transparent);
 }
-
 .nav-link:hover::after,
-.nav-link.is-active::after {
-    transform: scaleX(1);
-}
+.nav-link.is-active::after { transform: scaleX(1); }
+.nav-link.is-active { color: rgba(255,255,255,.96); }
 
-.nav-link.is-active {
-    color: rgba(255,255,255,.96);
-}
-
-/* ----- Bouton burger ----- */
+/* ── Nav : bouton burger ── */
 .nav-toggle {
     display: none;
     margin-left: auto;
@@ -140,7 +121,7 @@ body.is-night-mode .nav-stars {
     justify-content: center;
 }
 
-/* ----- Icône burger ----- */
+/* ── Nav : icône burger ── */
 .nav-burger,
 .nav-burger::before,
 .nav-burger::after {
@@ -151,39 +132,25 @@ body.is-night-mode .nav-stars {
     border-radius: 999px;
     transition: top 200ms 200ms ease, transform 200ms ease, background 200ms ease;
 }
-
-.nav-burger {
-    position: relative;
-}
-
+.nav-burger { position: relative; }
 .nav-burger::before,
 .nav-burger::after {
     content: "";
     position: absolute;
     left: 0;
 }
-
 .nav-burger::before { top: -6px; }
 .nav-burger::after  { top:  6px; }
 
-/* ----- Burger → Croix ----- */
-.nav-toggle[aria-expanded="true"] .nav-burger {
-    background: transparent;
-}
-
+/* ── Nav : burger → croix ── */
+.nav-toggle[aria-expanded="true"] .nav-burger { background: transparent; }
 .nav-toggle[aria-expanded="true"] .nav-burger::before {
     top: 0;
     transform: rotate(45deg);
     transition: top 200ms ease, transform 200ms 200ms ease;
 }
-
 .nav-toggle[aria-expanded="true"] .nav-burger::after {
     top: 0;
     transform: rotate(-45deg);
     transition: top 200ms ease, transform 200ms 200ms ease;
 }
-
-/* ================================================
-   MOBILE
-   ================================================ */
-

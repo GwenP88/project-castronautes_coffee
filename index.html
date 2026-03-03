@@ -1,235 +1,234 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Castronautes Coffee - Accueil</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castronaute Coffee</title>
 
-        <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
-        <script>
-            if (localStorage.getItem('theme') === 'night') {
-                document.documentElement.setAttribute('data-theme', 'night');
-            }
-        </script>
-        
-        <!-- CSS files -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/hero.css">
-        <link rel="stylesheet" href="css/history.css">
-        <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/team.css">
-        <link rel="stylesheet" href="css/contact.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/night-access.css">
-        <link rel="stylesheet" href="css/overlay.css">
-        <link rel="stylesheet" href="css/responsive.css">
+    <!-- Thème nuit : appliqué avant rendu -->
+    <script>
+        if (localStorage.getItem('theme') === 'night') {
+            document.documentElement.setAttribute('data-theme', 'night');
+        }
+    </script>
 
-        
-        <!-- JS files -->
-        <script src="js/script.js" defer></script>
-        <script src="js/nav.js" defer></script>
-        <script src="js/form.js" defer></script>
-        <script src="js/overlay.js" defer></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/night-access.css">
+    <link rel="stylesheet" href="css/overlay.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- JS -->
+    <script src="js/script.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/form.js" defer></script>
+    <script src="js/overlay.js" defer></script>
 
-    </head>
-    <body>
-        <header>
-            <canvas class="nav-stars" aria-hidden="true"></canvas>
-            <!-- Partie gauche - Logo -->
-            <nav class="container-nav">
-                <a class="nav-logo" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="assets/logo/logo.webp" alt="Logo du Castronautes Coffee" height="36">
-                </a>
+    <!-- Icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
 
-                <!-- Bouton burger (mobile) -->
-                <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="nav-burger" aria-hidden="true"></span>
-                </button>
+<body>
+    <!-- ── Header : navigation ── -->
+    <header>
+        <canvas class="nav-stars" aria-hidden="true"></canvas>
+        <nav class="container-nav">
 
-                <!-- Partie droite - Lien / menu -->
-                <div class="nav-menu" id="nav-menu">
-                    <ul>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html#contact">Envoyer un signal</a></li>
-                    </ul>
-                </div>    
-            </nav>
-        </header>
+            <!-- Logo -->
+            <a class="nav-logo" href="index.html" aria-label="Retour à l'accueil">
+                <img src="assets/logo/logo.webp" alt="Logo du Castronautes Coffee" height="36">
+            </a>
 
-        <main>
-            <!-- section hero -->
-            <section class="hero" aria-labelledby="hero-title">
-                <div class="hero-bg-overlay"></div>
+            <!-- Burger mobile -->
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-burger" aria-hidden="true"></span>
+            </button>
 
-                <div class="hero-content row">
-                    <h4>Station lunaire - secteur caféïne</h4>
-                    <h1 id="hero-title">Du café. Du bois. Dans l’espace</h1>
-                    <h3 class="hero-subtitle">Le premier coffee shop intergalactique tenu par des castors. Oui...</h3>
+            <!-- Liens -->
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Commencer ici</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Se ravitailler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html#equipe">Voir l'équipage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html#contact">Envoyer un signal</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-                    <div class="hero-cta">
-                        <a class="btn-cta" href="menu.html">Découvrir le Menu Galactique</a>
+    <main>
+        <!-- ── Hero ── -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content row">
+                <h4>Station lunaire - secteur caféïne</h4>
+                <h1 id="hero-title">Du café. Du bois. Dans l'espace</h1>
+                <h3 class="hero-subtitle">Le premier coffee shop intergalactique tenu par des castors. Oui...</h3>
+                <div class="hero-cta">
+                    <a class="btn-cta" href="menu.html">Découvrir le Menu Galactique</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── History ── -->
+        <section class="history" aria-labelledby="history-title">
+            <h2 id="history-title">Pourquoi le Castronautes Coffee... and more</h2>
+            <p class="history-tagline">On construit lentement. On explore sans cesse. Et pour le reste… c'est à vous de voir.</p>
+            <div class="history-grid">
+
+                <!-- Ligne 1 : image + texte -->
+                <article class="history-row">
+                    <div class="history-img">
+                        <img class="img-coffee" src="assets/other/Counter.webp" alt="Photo du Castronautes coffee, face au batiment" height="200">
                     </div>
-                </div>
-            </section>
+                    <div class="history-content">
+                        <p><strong>Castronaute Coffee</strong> est un coffee shop construit par trois castors comme une station spatiale en rondins, posé au bord d'une rivière sans eau… sur la Lune. Un lieu qui semble improbable, mais qui, étrangement, tient debout. Au fil de leurs explorations, ils ont compris une chose essentielle : le café n'est pas qu'une boisson. C'est un carburant. Celui qui maintient les équipes éveillées, les idées en mouvement et les projets… presque réalisables.</p>
+                    </div>
+                </article>
 
-            <!-- section history -->
-            <section class="history" aria-labelledby="history-title">
-                <h2 id="history-title">Pourquoi le Castronautes Coffee... and more</h2>
-                <p class="history-tagline">On construit lentement. On explore sans cesse. Et pour le reste… c’est à vous de voir.</p>
+                <!-- Ligne 2 : texte + image -->
+                <article class="history-row">
+                    <div class="history-content">
+                        <p>Leur meilleure invention ? <strong>Le Bois Quantique</strong>. Ça pousse comme un arbre, mais ça sert aussi de carburant, de tasse, de fusée… et parfois de table. C'est ainsi qu'est né Castronaute Coffee… and more. Un lieu chaleureux, accueillant, presque normal.<br><em>"Fondé un mardi. Même si on ne se souvient plus lequel."</em><br>Le jour, on y sert des boissons chaudes et quelques snacks. Les recettes sont connues. Les gestes sont précis. Les horaires, eux, font de leur mieux.</p>
+                    </div>
+                    <div class="history-img">
+                        <img class="img-arbre" src="assets/other/arbreQuantique.webp" alt="Photo d'un arbre quantique en pleine florauson au début du printemps lunaire" height="200">
+                    </div>
+                </article>
 
-                <div class="history-grid">
-                    <!-- Row 1: image (1/3) + text (2/3) -->
-                    <article class="history-row">
-                        <div class="history-img">
-                            <img class="img-coffee" src="assets/other/Counter.webp" alt="Photo du Castronautes coffee, face au batiment" height="200"/>
-                        </div>
+                <!-- Ligne 3 : image + texte -->
+                <article class="history-row">
+                    <div class="history-img">
+                        <img class="img-chut" src="assets/crew/castorChut.webp" alt="Photo d'un castor qui fait chut du doigt" height="200">
+                    </div>
+                    <div class="history-content">
+                        <p>Puis certains visiteurs commencent à remarquer des détails :</p>
+                        <ul>
+                            <li>Des outils rangés trop soigneusement pour être utiles,</li>
+                            <li>Des portes toujours fermées, même quand il n'y a personne derrière,</li>
+                            <li>Des conversations qui s'interrompent pile au moment où elles deviennent intéressantes.</li>
+                        </ul>
+                        <p>Les règles n'ont pas disparu… elles ont simplement été remplacées. À partir de ce moment, il ne s'agit plus seulement de café.<br>La suite est classée confidentielle...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-                        <div class="history-content">
-                            <p><strong>Castronaute Coffee</strong> est un coffee shop construit par trois castors comme une station spatiale en rondins, posé au bord d’une rivière sans eau… sur la Lune. Un lieu qui semble improbable, mais qui, étrangement, tient debout. Au fil de leurs explorations, ils ont compris une chose essentielle : le café n’est pas qu’une boisson. C’est un carburant. Celui qui maintient les équipes éveillées, les idées en mouvement et les projets… presque réalisables.</p>
-                        </div>
-                    </article>
+        <!-- ── Night access ── -->
+        <section class="night-access-card" aria-labelledby="night-access-title">
 
-                    <!-- Row 2: text (2/3) + image (1/3) -->
-                    <article class="history-row">
-                        <div class="history-content">
-                            <p>Leur meilleure invention ? <strong>Le Bois Quantique</strong>. Ça pousse comme un arbre, mais ça sert aussi de carburant, de tasse, de fusée… et parfois de table. C’est ainsi qu’est né Castronaute Coffee… and more. Un lieu chaleureux, accueillant, presque normal.<br><em>"Fondé un mardi. Même si on ne se souvient plus lequel."</em><br>Le jour, on y sert des boissons chaudes et quelques snacks. Les recettes sont connues. Les gestes sont précis. Les horaires, eux, font de leur mieux.</p>
-                        </div>
-                        <div class="history-img">
-                            <img class="img-arbre" src="assets/other/arbreQuantique.webp" alt="Photo d'un arbre quantique en pleine florauson au début du printemps lunaire" height="200"/>
-                        </div>
-                    </article>
+            <!-- Titre (2 versions jour/nuit) -->
+            <h2 id="night-access-title" class="night-access-title">
+                <span class="is-day">Et pour les plus courageux...</span>
+                <span class="is-night" hidden>Et pour les plus peureux...</span>
+            </h2>
 
-                    <!-- Row 3: image (1/3) + text (2/3) -->
-                    <article class="history-row">
-                        <div class="history-img">
-                            <img class="img-chut" src="assets/crew/castorChut.webp" alt="Photo d'un castor qui fait chut du doigt" height="200"/>
-                        </div>
-
-                        <div class="history-content">
-                            <p>Puis certains visiteurs commencent à remarquer des détails :</p> 
-                            <ul>
-                                <li>Des outils rangés trop soigneusement pour être utiles,</li>
-                                <li>Des portes toujours fermées, même quand il n’y a personne derrière,</li>
-                                <li>Des conversations qui s’interrompent pile au moment où elles deviennent intéressantes.</li>
-                            </ul>
-                            <p>Les règles n’ont pas disparu… elles ont simplement été remplacées. À partir de ce moment, il ne s’agit plus seulement de café.<br>La suite est classée confidentielle...</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="night-access-card" aria-labelledby="night-access-title">
-                <!-- TITRE : 2 versions -->
-                <h2 id="night-access-title" class="night-access-title">
-                    <span class="is-day">Et pour les plus courageux...</span>
-                    <span class="is-night" hidden>Et pour les plus peureux...</span>
-                </h2>
-                <div class="night-access-left">
-                    <!-- LISTE : 2 versions -->
-                    <ul class="night-access-questions is-day">
+            <!-- Questions (2 versions jour/nuit) -->
+            <div class="night-access-left">
+                <ul class="night-access-questions is-day">
                     <li>Vous aimez le café ?</li>
                     <li>Vous acceptez facilement les décisions discutables ?</li>
-                    </ul>
-
-                    <ul class="night-access-questions is-night" hidden>
-                    <li>Vous n’aimez pas la nuit ?</li>
+                </ul>
+                <ul class="night-access-questions is-night" hidden>
+                    <li>Vous n'aimez pas la nuit ?</li>
                     <li>Vous préférez les boissons sans caféine ?</li>
-                    <li>Vous n’aimez pas trop l’autorité ?</li>
-                    </ul>
-                </div>
-                <div class="night-access-right">
-                    <button class="btn-cta" type="button" data-open-overlay="nightOverlay" data-open-night>
-                    OUI
-                    </button>
-                    <p class="night-access-hint">
-                        <em>Cette action peut entraîner une légère perte de repères.</em>
-                    </p>
-                </div>  
-            </section>
+                </ul>
+            </div>
 
-            <!-- Night Overlay (bascule nuit) -->
-            <section class="night-overlay" id="nightOverlay" role="dialog" aria-modal="true" aria-labelledby="nightOverlayTitle" aria-describedby="nightOverlayDesc" hidden>
+            <!-- CTA -->
+            <div class="night-access-right">
+                <button class="btn-cta" type="button" data-open-overlay="nightOverlay" data-open-night>OUI</button>
+                <p class="night-access-hint"><em>Cette action peut entraîner une légère perte de repères.</em></p>
+            </div>
+        </section>
 
-                <!-- Fond cliquable pour fermer -->
-                <div class="night-overlay-backdrop" data-close="true"></div>
+        <!-- ── Night overlay (terminal de bascule nuit) ── -->
+        <section class="night-overlay" id="nightOverlay" role="dialog" aria-modal="true" aria-labelledby="nightOverlayTitle" aria-describedby="nightOverlayDesc" hidden>
 
-                <!-- Fenêtre -->
-                <div class="night-overlay-panel">
-                    <button class="night-overlay-close" type="button" aria-label="Fermer" data-close="true">✕</button>
+            <!-- Fond cliquable -->
+            <div class="night-overlay-backdrop" data-close="true"></div>
 
-                <!-- 1) ANALYSE EN COURS + dots mobiles -->
-                    <h2 id="nightOverlayTitle" class="night-overlay-title">ANALYSE EN COURS<span id="nightDots" aria-hidden="true">...</span></h2>
+            <!-- Fenêtre terminal -->
+            <div class="night-overlay-panel">
+                <button class="night-overlay-close" type="button" aria-label="Fermer" data-close="true">✕</button>
 
-                    <!-- 2) Le "terminal" -->
-                    <pre class="night-overlay-terminal" id="nightTerminal" aria-live="polite"></pre>
+                <!-- Titre animé -->
+                <h2 id="nightOverlayTitle" class="night-overlay-title">ANALYSE EN COURS<span id="nightDots" aria-hidden="true">...</span></h2>
 
-                    <!-- 3) Ligne STATUT + dots mobiles puis ACCEPTÉ -->
-                    <p class="night-overlay-status" aria-live="polite">
-                        <span class="night-status-label">STATUT</span>
-                        <span class="night-status-dots" id="nightStatusDots" aria-hidden="true">...</span>
-                        <span class="night-status-result" id="nightStatusResult" hidden>ACCEPTÉ</span>
-                    </p>
+                <!-- Texte terminal -->
+                <pre class="night-overlay-terminal" id="nightTerminal" aria-live="polite"></pre>
 
-                    <!-- 4) Dernière ligne ACCÈS AUTORISÉ (affichée à la fin) -->
-                    <p class="night-overlay-final" id="nightFinal" hidden>ACCÈS AUTORISÉ</p>
+                <!-- Statut -->
+                <p class="night-overlay-status" aria-live="polite">
+                    <span class="night-status-label">STATUT</span>
+                    <span class="night-status-dots" id="nightStatusDots" aria-hidden="true">...</span>
+                    <span class="night-status-result" id="nightStatusResult" hidden>ACCEPTÉ</span>
+                </p>
 
-                    <!-- 5) Le texte source à afficher dans le terminal -->
-                    <template id="nightScript">
+                <!-- Résultat final -->
+                <p class="night-overlay-final" id="nightFinal" hidden>ACCÈS AUTORISÉ</p>
+
+                <!-- Script terminal (source) -->
+                <template id="nightScript">
                     ESPÈCE : HUMAIN
                     NIVEAU DE FATIGUE : COMPATIBLE
                     COMPÉTENCES : INUTILES
                     AFFINITÉ AU CAFÉ : FORTE
-                    RAPPORT À L’AUTORITÉ : FAIBLE
+                    RAPPORT À L'AUTORITÉ : FAIBLE
                     PRISE DE DÉCISION : IRRÉFLÉCHIE
-                    </template>
-                </div>
+                </template>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <div class="container-col-footer col">
+
+            <!-- Colonne 1 : identité -->
+            <section class="footer-col">
+                <h3 class="footer-title">Castronaute Coffee… and more</h3>
+                <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
             </section>
-        </main>
-            <footer>
-                <div class="container-col-footer col">
-                    <!-- Colonne 1 -->
-                    <section class="footer-col">
-                        <h3 class="footer-title">Castronaute Coffee… and more</h3>
-                        <p class="footer-text"><em>Division énergisée — activités non documentées</em></p>
-                    </section>
 
-                    <!-- Colonne 2 -->
-                    <nav class="footer-col">
-                        <h3 class="footer-title">Navigation</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
-                            <li class="footer-item"><a class="footer-link" href="menu.html">Se ravitailler</a></li>
-                            <li class="footer-item"><a class="footer-link" href="contact.html#equipe">Voir l’équipage</a></li>
-                            <li class="footer-item"><a class="footer-link" href="contact.html#contact">Envoyer un signal</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <!-- Colonne 3 -->
-                    <section class="footer-col">
-                        <h3 class="footer-title">Transmissions</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a class="footer-link" href="mailto:email@castronaute.local">email@castronaute.local</a>
-                            </li>
-                            <li class="footer-item">Fréquence : <span class="footer-freq">42.0 MHz</span> (à peu près)</li>
-                        </ul>
-                    </section>
-                </div>
+            <!-- Colonne 2 : navigation -->
+            <nav class="footer-col">
+                <h3 class="footer-title">Navigation</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a class="footer-link" href="index.html">Commencer ici</a></li>
+                    <li class="footer-item"><a class="footer-link" href="menu.html">Se ravitailler</a></li>
+                    <li class="footer-item"><a class="footer-link" href="contact.html#equipe">Voir l'équipage</a></li>
+                    <li class="footer-item"><a class="footer-link" href="contact.html#contact">Envoyer un signal</a></li>
+                </ul>
+            </nav>
 
-                <!-- Bas de footer -->
-                <div class="footer-bottom" aria-label="Mentions">
-                    <p class="footer-copyright"> © <strong>Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
-                </div>
-            </footer>
-    </body>
+            <!-- Colonne 3 : contact -->
+            <section class="footer-col">
+                <h3 class="footer-title">Transmissions</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a class="footer-link" href="mailto:email@castronaute.local">email@castronaute.local</a></li>
+                    <li class="footer-item">Fréquence : <span class="footer-freq">42.0 MHz</span> (à peu près)</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom" aria-label="Mentions">
+            <p class="footer-copyright">© <strong>Castronaute Coffee</strong> — Agence non certifiée mais motivée.</p>
+        </div>
+    </footer>
+</body>
 </html>

@@ -1,43 +1,54 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+/* ══════════════════════════════════════════
+                NAV : menu burger
+   ══════════════════════════════════════════ */
 
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu   = document.querySelector('.nav-menu');
+
+/* ── Fermer le menu (helper réutilisable) ── */
+function closeMenu() {
+    navMenu.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+}
+
+/* ── Ouvrir / fermer au clic sur le burger ── */
 navToggle.addEventListener('click', function() {
     const isOpen = navMenu.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', isOpen);
     navToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
 });
 
-// Fermer si on clique sur un lien
+/* ── Fermer au clic sur un lien ── */
 document.querySelectorAll('.nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-        navMenu.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Ouvrir le menu');
-    });
+    link.addEventListener('click', closeMenu);
 });
 
-// Fermer si on clique en dehors
+/* ── Fermer au clic en dehors ── */
 document.addEventListener('click', function(e) {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        closeMenu();
     }
 });
 
+/* ══════════════════════════════════════════
+        NAV : étoiles canvas (mode nuit)
+   ══════════════════════════════════════════ */
 
 const navCanvas = document.querySelector('.nav-stars');
 
 if (navCanvas) {
-    const ctx = navCanvas.getContext('2d');
+    const ctx   = navCanvas.getContext('2d');
     const COUNT = 60;
     const stars = [];
 
+    /* ── Redimensionner le canvas ── */
     function resizeNavCanvas() {
-        navCanvas.width = navCanvas.offsetWidth;
+        navCanvas.width  = navCanvas.offsetWidth;
         navCanvas.height = navCanvas.offsetHeight;
     }
 
+    /* ── Générer les étoiles ── */
     function initNavStars() {
         stars.length = 0;
         for (let i = 0; i < COUNT; i++) {
@@ -52,6 +63,7 @@ if (navCanvas) {
         }
     }
 
+    /* ── Dessiner les étoiles (boucle d'animation) ── */
     function drawNavStars(t) {
         ctx.clearRect(0, 0, navCanvas.width, navCanvas.height);
         stars.forEach(function(s) {
@@ -66,6 +78,7 @@ if (navCanvas) {
         requestAnimationFrame(drawNavStars);
     }
 
+    /* ── Init + resize ── */
     resizeNavCanvas();
     initNavStars();
     window.addEventListener('resize', function() {
@@ -75,19 +88,23 @@ if (navCanvas) {
     requestAnimationFrame(drawNavStars);
 }
 
-const currentPage = location.pathname.split('/').pop() || 'index.html';
-const currentHash = location.hash;
+/* ══════════════════════════════════════════
+                NAV : lien actif
+   ══════════════════════════════════════════ */
 
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+
+/* ── Calculer et appliquer le lien actif ── */
 function setActiveLink() {
     const hash = location.hash;
     document.querySelectorAll('.nav-link').forEach(function(link) {
         link.classList.remove('is-active');
         const href = link.getAttribute('href');
 
-        if (href === currentPage) {
-            link.classList.add('is-active');
-        }
+        /* Page courante */
+        if (href === currentPage) link.classList.add('is-active');
 
+        /* Page contact : ancres #equipe / #contact */
         if (currentPage === 'contact.html') {
             if (hash === '#contact' && href === 'contact.html#contact') {
                 link.classList.add('is-active');
@@ -98,15 +115,15 @@ function setActiveLink() {
     });
 }
 
-// Au chargement
+/* ── Au chargement ── */
 setActiveLink();
 
-// Au clic sur un lien ancre
+/* ── Au clic sur un lien ancre (délai pour laisser l'URL se mettre à jour) ── */
 document.querySelectorAll('.nav-link').forEach(function(link) {
     link.addEventListener('click', function() {
-        setTimeout(setActiveLink, 50); // léger délai pour que l'URL se mette à jour
+        setTimeout(setActiveLink, 50);
     });
 });
 
-// Si l'utilisateur navigue avec les boutons précédent/suivant
+/* ── Navigation précédent / suivant ── */
 window.addEventListener('hashchange', setActiveLink);

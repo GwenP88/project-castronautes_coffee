@@ -1,7 +1,4 @@
-/* ================================================
-   NIGHT OVERLAY — Terminal Shell
-   ================================================ */
-
+/* ── Night overlay : wrapper ── */
 .night-overlay {
     position: fixed;
     inset: 0;
@@ -10,20 +7,17 @@
     align-items: center;
     justify-content: center;
 }
+.night-overlay[hidden] { display: none !important; }
 
-.night-overlay[hidden] {
-    display: none !important;
-}
-
-/* ----- Fond sombre semi-transparent ----- */
+/* ── Night overlay : fond sombre ── */
 .night-overlay-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0,0,0,0.85);
     cursor: pointer;
 }
 
-/* ----- Fenêtre terminal ----- */
+/* ── Night overlay : fenêtre terminal ── */
 .night-overlay-panel {
     position: relative;
     z-index: 1;
@@ -33,11 +27,9 @@
     border-top: 3px solid #4CC9F0;
     border-radius: 8px;
     padding: 40px 48px 48px;
-    box-shadow: 0 0 60px rgba(76, 201, 240, 0.15), 0 0 120px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 60px rgba(76,201,240,0.15), 0 0 120px rgba(0,0,0,0.8);
     font-family: "Courier New", Courier, monospace;
 }
-
-/* ----- Barre de titre style terminal ----- */
 .night-overlay-panel::before {
     content: none;
     position: absolute;
@@ -48,7 +40,7 @@
     color: #333;
 }
 
-/* ----- Bouton fermer ----- */
+/* ── Night overlay : bouton fermer ── */
 .night-overlay-close {
     position: absolute;
     top: 8px;
@@ -62,12 +54,9 @@
     transition: color 180ms ease;
     font-family: inherit;
 }
+.night-overlay-close:hover { color: #ff6b6b; }
 
-.night-overlay-close:hover {
-    color: #ff6b6b;
-}
-
-/* ----- Titre ANALYSE EN COURS ----- */
+/* ── Night overlay : titre ── */
 .night-overlay-title {
     font-family: "Courier New", Courier, monospace;
     font-size: clamp(13px, 1.4vw, 17px);
@@ -75,10 +64,10 @@
     letter-spacing: .12em;
     color: #4CC9F0;
     margin: 0 0 28px;
-    text-shadow: 0 0 12px rgba(76, 201, 240, 0.6);
+    text-shadow: 0 0 12px rgba(76,201,240,0.6);
 }
 
-/* ----- Terminal texte ----- */
+/* ── Night overlay : texte terminal ── */
 .night-overlay-terminal {
     font-family: "Courier New", Courier, monospace;
     font-size: clamp(12px, 1.1vw, 15px);
@@ -90,10 +79,10 @@
     white-space: pre;
     line-height: 1.9;
     min-height: 140px;
-    text-shadow: 0 0 8px rgba(165, 255, 214, 0.4);
+    text-shadow: 0 0 8px rgba(165,255,214,0.4);
 }
 
-/* ----- Ligne STATUT ----- */
+/* ── Night overlay : ligne statut ── */
 .night-overlay-status {
     font-family: "Courier New", Courier, monospace;
     font-size: clamp(12px, 1.1vw, 15px);
@@ -104,34 +93,27 @@
     gap: 12px;
     align-items: center;
 }
-
-.night-status-label {
-    color: #555;
-}
-
-.night-status-dots {
-    color: #444;
-    letter-spacing: .2em;
-}
-
+.night-status-label { color: #555; }
+.night-status-dots { color: #444; letter-spacing: .2em; }
 .night-status-result {
     color: #A5FFD6;
-    text-shadow: 0 0 10px rgba(165, 255, 214, 0.6);
+    text-shadow: 0 0 10px rgba(165,255,214,0.6);
     font-weight: 700;
 }
 
-/* ----- ACCÈS AUTORISÉ ----- */
+/* ── Night overlay : accès autorisé ── */
 .night-overlay-final {
     font-family: "Courier New", Courier, monospace;
     font-size: clamp(16px, 1.8vw, 22px);
     font-weight: 700;
     letter-spacing: .18em;
     color: #4CC9F0;
-    text-shadow: 0 0 20px rgba(76, 201, 240, 0.8), 0 0 40px rgba(76, 201, 240, 0.4);
+    text-shadow: 0 0 20px rgba(76,201,240,0.8), 0 0 40px rgba(76,201,240,0.4);
     margin: 0;
     animation: flicker 600ms ease-in-out;
 }
 
+/* ── Night overlay : animation flicker ── */
 @keyframes flicker {
     0%   { opacity: 0; }
     30%  { opacity: 1; }

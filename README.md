@@ -8,19 +8,19 @@ Objectif : renforcer les bases en intégration HTML/CSS/JS à travers un projet 
 
 ---
 
-## 🌌 Concept
+## Concept
 
 **Castronautes Coffee** est le premier coffee shop intergalactique tenu par des castors explorateurs de l’espace.  
 L’univers graphique mélange :
 
-- 🌲 Nature / Bois / Artisanat  
-- 🌠 Cosmique / Galaxies / Exploration spatiale  
+- Nature / Bois / Artisanat  
+- Cosmique / Galaxies / Exploration spatiale  
 
 L’idée : créer un site vitrine immersif, responsive et professionnel, tout en respectant des contraintes techniques strictes.
 
 ---
 
-## 🎯 Objectifs pédagogiques
+## Objectifs pédagogiques
 
 - Maîtriser la structure sémantique HTML5
 - Organiser un CSS propre et structuré
@@ -31,7 +31,7 @@ L’idée : créer un site vitrine immersif, responsive et professionnel, tout e
 
 ---
 
-## 🛠 Contraintes techniques (strictes)
+## Contraintes techniques (strictes)
 
 - ✅ HTML5  
 - ✅ CSS3  
@@ -45,7 +45,7 @@ Tout le contenu est codé en dur.
 
 ---
 
-## 📂 Structure du site
+## Structure du site
 
 Le site est composé de plusieurs pages reliées entre elles, avec :
 
@@ -53,22 +53,22 @@ Le site est composé de plusieurs pages reliées entre elles, avec :
 - Navbar responsive (menu burger mobile)
 - Footer commun
 
-### 🔹 Pages disponibles
+### Pages disponibles
 
-- 🏠 Home  
+- Home  
   https://gwenp88.github.io/project-castronautes_coffee/
 
-- 📋 Menu  
+- Menu  
   https://gwenp88.github.io/project-castronautes_coffee/menu.html
 
-- 📬 Contact & Équipage  
+- Contact & Équipage  
   https://gwenp88.github.io/project-castronautes_coffee/contact.html#equipe
 
 ---
 
-## 🧱 Détails des pages
+## Détails des pages
 
-### 🏠 Home
+### Home
 
 La page d’accueil pose l’univers du projet et sert de porte d’entrée immersive.
 
@@ -83,7 +83,7 @@ La page d’accueil pose l’univers du projet et sert de porte d’entrée imme
 
 ---
 
-### ☕ Menu
+### Menu
 
 Page orientée “vitrine produits”, pensée comme un menu de coffee shop… version galaxie.
 
@@ -98,7 +98,7 @@ Page orientée “vitrine produits”, pensée comme un menu de coffee shop… v
 
 ---
 
-### 📬 Contact & L’équipage
+### Contact & L’équipage
 
 Page mixte : conversion (contact) + storytelling (l’équipe).
 
@@ -112,7 +112,7 @@ Page mixte : conversion (contact) + storytelling (l’équipe).
 
 ---
 
-## 🌗 Mode Jour / Mode Nuit (overlay d’ambiance)
+## Mode Jour / Mode Nuit (overlay d’ambiance)
 
 Le site intègre un **overlay interactif** qui bascule l’expérience visuelle :
 
@@ -129,13 +129,13 @@ Fonctionnement général :
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 
 Le site est pensé **mobile-first** et s’adapte à tous les formats :
 
-- 📱 Mobile
-- 📲 Tablette
-- 💻 Desktop
+- Mobile
+- Tablette
+- Desktop
 
 Éléments responsive importants :
 - **Navbar responsive** : navigation entre les pages + transformation en **menu burger** sur petits écrans
@@ -145,7 +145,7 @@ Le site est pensé **mobile-first** et s’adapte à tous les formats :
 
 ---
 
-## 🎨 Intentions design
+## Intentions design
 
 - Univers hybride bois + cosmos
 - Ambiance immersive
@@ -155,7 +155,7 @@ Le site est pensé **mobile-first** et s’adapte à tous les formats :
 
 ---
 
-## 🚀 Pourquoi ce projet est important ?
+## Pourquoi ce projet est important ?
 
 Ce projet est un terrain d’entraînement complet pour :
 
@@ -166,7 +166,7 @@ Ce projet est un terrain d’entraînement complet pour :
 
 ---
 
-## 👩‍💻 Auteur
+## Auteur
 
 **Gwenaelle PICHOT**  
 Student at Holberton School   

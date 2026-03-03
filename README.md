@@ -168,8 +168,8 @@ Ce projet est un terrain d’entraînement complet pour :
 
 ## 👩‍💻 Auteur
 
-Projet réalisé par **Gwenaëlle P.**  
-Étudiante en développement web – Holberton School
+**Gwenaelle PICHOT**  
+Student at Holberton School   
 
 ---
 

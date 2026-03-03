@@ -31,6 +31,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
+
 /* ══════════════════════════════════════════
         NAV : étoiles canvas (mode nuit)
    ══════════════════════════════════════════ */
@@ -41,6 +42,13 @@ if (navCanvas) {
     const ctx   = navCanvas.getContext('2d');
     const COUNT = 60;
     const stars = [];
+    let animationId = null;
+
+    /* ── Vérifier si le mode nuit est actif ── */
+    function isNightMode() {
+        return document.documentElement.getAttribute('data-theme') === 'night'
+            || document.body.classList.contains('is-night-mode');
+    }
 
     /* ── Redimensionner le canvas ── */
     function resizeNavCanvas() {
@@ -75,18 +83,47 @@ if (navCanvas) {
                 : `rgba(255, 255, 255, ${a})`;
             ctx.fill();
         });
-        requestAnimationFrame(drawNavStars);
+        animationId = requestAnimationFrame(drawNavStars);
     }
 
-    /* ── Init + resize ── */
-    resizeNavCanvas();
-    initNavStars();
-    window.addEventListener('resize', function() {
+    /* ── Démarrer l'animation ── */
+    function startNavStars() {
+        if (animationId) return;
         resizeNavCanvas();
         initNavStars();
+        animationId = requestAnimationFrame(drawNavStars);
+    }
+
+    /* ── Arrêter l'animation ── */
+    function stopNavStars() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+            ctx.clearRect(0, 0, navCanvas.width, navCanvas.height);
+        }
+    }
+
+    /* ── Init au chargement ── */
+    if (isNightMode()) startNavStars();
+
+    /* ── Démarrer / arrêter selon le thème ── */
+    const themeObserver = new MutationObserver(function() {
+        if (isNightMode()) startNavStars();
+        else stopNavStars();
     });
-    requestAnimationFrame(drawNavStars);
+
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+
+    /* ── Resize uniquement si animation active ── */
+    window.addEventListener('resize', function() {
+        if (animationId) {
+            resizeNavCanvas();
+            initNavStars();
+        }
+    });
 }
+
 
 /* ══════════════════════════════════════════
                 NAV : lien actif

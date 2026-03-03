@@ -43,6 +43,7 @@ if (menuSelect) {
     });
 }
 
+
 /* ════════════════════════════════════════════
         CONTACT : étoiles canvas (mode nuit)
    ════════════════════════════════════════════ */
@@ -53,6 +54,13 @@ if (contactCanvas) {
     const ctx   = contactCanvas.getContext('2d');
     const COUNT = 80;
     const stars = [];
+    let animationId = null;
+
+    /* ── Vérifier si le mode nuit est actif ── */
+    function isNightMode() {
+        return document.documentElement.getAttribute('data-theme') === 'night'
+            || document.body.classList.contains('is-night-mode');
+    }
 
     /* ── Redimensionner le canvas ── */
     function resizeContactCanvas() {
@@ -87,15 +95,43 @@ if (contactCanvas) {
                 : `rgba(255, 255, 255, ${a})`;
             ctx.fill();
         });
-        requestAnimationFrame(drawContactStars);
+        animationId = requestAnimationFrame(drawContactStars);
     }
 
-    /* ── Init + resize ── */
-    resizeContactCanvas();
-    initContactStars();
-    window.addEventListener('resize', function() {
+    /* ── Démarrer l'animation ── */
+    function startContactStars() {
+        if (animationId) return;
         resizeContactCanvas();
         initContactStars();
+        animationId = requestAnimationFrame(drawContactStars);
+    }
+
+    /* ── Arrêter l'animation ── */
+    function stopContactStars() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+            ctx.clearRect(0, 0, contactCanvas.width, contactCanvas.height);
+        }
+    }
+
+    /* ── Init au chargement ── */
+    if (isNightMode()) startContactStars();
+
+    /* ── Démarrer / arrêter selon le thème ── */
+    const themeObserver = new MutationObserver(function() {
+        if (isNightMode()) startContactStars();
+        else stopContactStars();
     });
-    requestAnimationFrame(drawContactStars);
+
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+
+    /* ── Resize uniquement si animation active ── */
+    window.addEventListener('resize', function() {
+        if (animationId) {
+            resizeContactCanvas();
+            initContactStars();
+        }
+    });
 }

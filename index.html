@@ -19,17 +19,20 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/history.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/team.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/night-access.css">
-    <link rel="stylesheet" href="css/overlay.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Preload CSS critiques -->
+    <link rel="preload" href="css/style_responsive.css" as="style">
+    <link rel="preload" href="css/nav_footer.css" as="style">
+    <link rel="preload" href="css/hero_history.css" as="style">
+
+    <!-- CSS critiques -->
+    <link rel="stylesheet" href="css/style_responsive.css">
+    <link rel="stylesheet" href="css/nav_footer.css">
+    <link rel="stylesheet" href="css/hero_history.css">
+
+    <!-- CSS non critiques (chargement différé) -->
+    <link rel="stylesheet" href="css/menu.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/contact_team.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/overlay_night_access.css" media="print" onload="this.media='all'">
 
     <!-- JS -->
     <script src="js/script.js" defer></script>
@@ -38,7 +41,9 @@
     <script src="js/overlay.js" defer></script>
 
     <!-- Icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 512 512" aria-hidden="true" fill="currentColor">
+  <path d="M..."/>
+</svg>
 </head>
 
 <body>

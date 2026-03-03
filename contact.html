@@ -19,17 +19,20 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/history.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/team.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/night-access.css">
-    <link rel="stylesheet" href="css/overlay.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Preload critiques -->
+    <link rel="preload" href="css/style_responsive.css" as="style">
+    <link rel="preload" href="css/nav_footer.css" as="style">
+    <link rel="stylesheet" href="css/contact_team.css" as="style">
+
+    <!-- CSS critiques -->
+    <link rel="stylesheet" href="css/style_responsive.css">
+    <link rel="stylesheet" href="css/nav_footer.css">
+    <link rel="stylesheet" href="css/contact_team.css">
+
+    <!-- CSS non critiques -->
+    <link rel="stylesheet" href="css/hero_history.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/menu.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/overlay_night_access.css" media="print" onload="this.media='all'">
 
     <!-- JS -->
     <script src="js/script.js" defer></script>

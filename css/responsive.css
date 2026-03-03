@@ -321,4 +321,8 @@
     .history-content p {
         text-align: left;
     }
+
+    .history-img img {
+        height: 200px;   /* ← ajout */
+    }
 }

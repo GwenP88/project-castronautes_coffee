@@ -173,11 +173,15 @@
     line-height: 1.5;
 }
 
-.risk p i {
+.risk p svg {
     font-size: 13px;
     opacity: 0.75;
     flex-shrink: 0;
     margin-top: 2px;
+}
+
+.icon-radiation path {
+    fill: var(--accent2);
 }
 
 /* ----- Section cachée (filtre JS) ----- */
@@ -187,9 +191,6 @@
 }
 
 /* ----- Responsive ----- */
-
-
-.menu-tabs-select { display: none; }
 
 .menu-tabs-select option {
     background: #1A2E2B;

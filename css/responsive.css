@@ -163,7 +163,7 @@
 }
 
 /* ── Cards menu : image à gauche, texte à droite (768px → 426px) ── */
-@media (max-width: 768px) and (min-width: 426px) {
+@media (max-width: 768px) and (min-width: 425px) {
     .menu-grid {
         grid-template-columns: 1fr;
     }
@@ -184,6 +184,10 @@
         flex: 1;
         padding: 16px;
     }
+}
+
+@media (min-width: 769px) {
+    .menu-tabs-select { display: none; }
 }
 
 /* ── Overlay : marge latérale mobile (< 768px) ── */

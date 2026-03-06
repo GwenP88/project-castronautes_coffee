@@ -1,8 +1,9 @@
-/* ══════════════════════════════════════════
-    THÈME NUIT : activation / désactivation
-   ══════════════════════════════════════════ */
+// Restauration du mode au chargement de la page
+if (localStorage.getItem('theme') === 'night') {
+    activateNightMode();
+}
 
-/* ── Activer le mode nuit ── */
+// Fonctions mode nuit (disponibles partout)
 function activateNightMode() {
     document.documentElement.setAttribute('data-theme', 'night');
     document.body.setAttribute('data-theme', 'night');
@@ -16,7 +17,6 @@ function activateNightMode() {
     });
 }
 
-/* ── Désactiver le mode nuit ── */
 function deactivateNightMode() {
     document.documentElement.removeAttribute('data-theme');
     document.body.removeAttribute('data-theme');
@@ -30,12 +30,7 @@ function deactivateNightMode() {
     });
 }
 
-/* ── Restaurer le thème au chargement ── */
-if (localStorage.getItem('theme') === 'night') {
-    activateNightMode();
-}
-
-/* ── Boutons toggle (toutes les pages) ── */
+// Boutons toggle (présents sur toutes les pages)
 document.querySelectorAll('[data-open-night]').forEach(function(btn) {
     btn.addEventListener('click', function() {
         if (document.body.hasAttribute('data-theme')) {
@@ -47,22 +42,17 @@ document.querySelectorAll('[data-open-night]').forEach(function(btn) {
     });
 });
 
-/* ══════════════════════════════════════════
-        OVERLAY : terminal de bascule nuit
-   ══════════════════════════════════════════ */
-
+// Overlay (présent uniquement sur index.php)
 const overlay = document.getElementById('nightOverlay');
 
 if (overlay) {
-    /* ── Éléments du terminal ── */
-    const terminal     = document.getElementById('nightTerminal');
-    const nightDots    = document.getElementById('nightDots');
-    const statusDots   = document.getElementById('nightStatusDots');
+    const terminal = document.getElementById('nightTerminal');
+    const nightDots = document.getElementById('nightDots');
+    const statusDots = document.getElementById('nightStatusDots');
     const statusResult = document.getElementById('nightStatusResult');
-    const nightFinal   = document.getElementById('nightFinal');
-    const script       = document.getElementById('nightScript').innerHTML.trim();
+    const nightFinal = document.getElementById('nightFinal');
+    const script = document.getElementById('nightScript').innerHTML.trim();
 
-    /* ── Utilitaires d'animation ── */
     function wait(ms) {
         return new Promise(function(resolve) { setTimeout(resolve, ms); });
     }
@@ -95,7 +85,6 @@ if (overlay) {
         }
     }
 
-    /* ── Séquence d'animation complète ── */
     async function runOverlaySequence() {
         terminal.textContent = '';
         nightDots.textContent = '…';
@@ -103,7 +92,7 @@ if (overlay) {
         statusResult.setAttribute('hidden', '');
         nightFinal.setAttribute('hidden', '');
 
-        await animateDots(nightDots, 2000);
+        await animateDots(nightDots, 3000);
         nightDots.textContent = '.';
 
         const lines = script
@@ -113,18 +102,17 @@ if (overlay) {
 
         await typeLines(lines);
         await wait(400);
-        await animateDots(statusDots, 1500);
+        await animateDots(statusDots, 2000);
         statusDots.setAttribute('hidden', '');
         statusResult.removeAttribute('hidden');
         await wait(600);
         nightFinal.removeAttribute('hidden');
-        await wait(800);
+        await wait(1000);
         activateNightMode();
         await wait(800);
         closeOverlay();
     }
 
-    /* ── Ouvrir / fermer l'overlay ── */
     function openOverlay() {
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
@@ -136,12 +124,10 @@ if (overlay) {
         document.body.style.overflow = '';
     }
 
-    /* ── Fermer au clic sur data-close ── */
     overlay.addEventListener('click', function(e) {
         if (e.target.hasAttribute('data-close')) closeOverlay();
     });
 
-    /* ── Fermer à la touche Escape ── */
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeOverlay();
     });

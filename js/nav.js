@@ -7,7 +7,6 @@ navToggle.addEventListener('click', function() {
     navToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
 });
 
-// Fermer si on clique sur un lien
 document.querySelectorAll('.nav-link').forEach(function(link) {
     link.addEventListener('click', function() {
         navMenu.classList.remove('is-open');
@@ -16,7 +15,6 @@ document.querySelectorAll('.nav-link').forEach(function(link) {
     });
 });
 
-// Fermer si on clique en dehors
 document.addEventListener('click', function(e) {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
         navMenu.classList.remove('is-open');
@@ -32,6 +30,7 @@ if (navCanvas) {
     const ctx = navCanvas.getContext('2d');
     const COUNT = 60;
     const stars = [];
+    let animationRunning = false;
 
     function resizeNavCanvas() {
         navCanvas.width = navCanvas.offsetWidth;
@@ -63,17 +62,30 @@ if (navCanvas) {
                 : `rgba(255, 255, 255, ${a})`;
             ctx.fill();
         });
-        requestAnimationFrame(drawNavStars);
+        if (animationRunning) requestAnimationFrame(drawNavStars);
     }
 
     resizeNavCanvas();
     initNavStars();
+
     window.addEventListener('resize', function() {
         resizeNavCanvas();
         initNavStars();
     });
-    requestAnimationFrame(drawNavStars);
+
+    const navObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                animationRunning = true;
+                requestAnimationFrame(drawNavStars);
+            } else {
+                animationRunning = false;
+            }
+        });
+    });
+    navObserver.observe(navCanvas);
 }
+
 
 const currentPage = location.pathname.split('/').pop() || 'index.html';
 const currentHash = location.hash;
@@ -98,15 +110,12 @@ function setActiveLink() {
     });
 }
 
-// Au chargement
 setActiveLink();
 
-// Au clic sur un lien ancre
 document.querySelectorAll('.nav-link').forEach(function(link) {
     link.addEventListener('click', function() {
-        setTimeout(setActiveLink, 50); // léger délai pour que l'URL se mette à jour
+        setTimeout(setActiveLink, 50);
     });
 });
 
-// Si l'utilisateur navigue avec les boutons précédent/suivant
 window.addEventListener('hashchange', setActiveLink);
